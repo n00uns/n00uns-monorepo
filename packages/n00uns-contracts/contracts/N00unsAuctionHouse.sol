@@ -108,7 +108,7 @@ contract N00unsAuctionHouse is
      * @notice Create a bid for a N00un, with a given amount.
      * @dev This contract only accepts payment in ETH.
      */
-    function createBid(uint256 n00unId) external payable override nonReentrant {
+    function createBid2(uint256 n00unId) external payable  nonReentrant {
         IN00unsAuctionHouse.Auction memory _auction = auction;
 
         require(_auction.n00unId == n00unId, 'N00un not up for auction');
@@ -146,7 +146,7 @@ contract N00unsAuctionHouse is
         biddingToken = _biddingToken;
     }
 
-    function createBidWithToken(uint256 n00unId, uint256 bidAmount) external nonReentrant {
+    function createBid(uint256 n00unId, uint256 bidAmount) external nonReentrant {
         IN00unsAuctionHouse.Auction memory _auction = auction;
 
         require(_auction.n00unId == n00unId, 'N00un not up for auction');

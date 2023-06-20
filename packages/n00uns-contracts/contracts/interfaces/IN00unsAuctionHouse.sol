@@ -51,8 +51,7 @@ interface IN00unsAuctionHouse {
 
     function settleCurrentAndCreateNewAuction() external;
 
-    function createBid(uint256 n00unId) external payable;
-
+    function createBid(uint256 n00unId, uint256 bidAmount) external;
     function pause() external;
 
     function unpause() external;

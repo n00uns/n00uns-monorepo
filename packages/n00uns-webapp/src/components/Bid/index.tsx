@@ -150,12 +150,9 @@ const Bid: React.FC<{
 
     // The bid amount, scaled up by the number of decimals in the token.
     const value = utils.parseUnits(bidInputRef.current.value.toString(), 18);
-    var status = await approve(config.addresses.n00unsAuctionHouseProxy, value);
+   // var status = await approve(config.addresses.n00unsAuctionHouseProxy, value);
 
-    placeBid(auction.n00unId, {
-      value,
-      gasLimit: 150000, // A 10,000 gas pad is used to avoid 'Out of gas' errors
-    });
+   placeBid(auction.n00unId, value, null);
   };
 
   const settleAuctionHandler = () => {
