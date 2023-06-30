@@ -1,6 +1,2 @@
 [functions]
   directory = "packages/vrbs-webapp/functions"
-
-[build]
-  command = "git submodule update --init --recursive --depth=1 && yarn workspace @vrbs/webapp build"
-  publish = "packages/vrbs-webapp/build"
