@@ -16,17 +16,12 @@ export class ThreePhysicsComponent extends Scene3D {
   async preload() {}
 
   async create() {
-    let clickRequest = false;
     // set up scene (light, ground, grid, sky, orbitControls)
     this.warpSpeed("-ground");
-    // console.log(ground);
+
     // position camera
     this.camera.position.set(3, 7, 18);
     this.camera.lookAt(0, 0, 0);
-
-    // grid (texture)
-    // const gridData =
-    //   "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOnAAADusBZ+q87AAAAJtJREFUeJzt0EENwDAAxLDbNP6UOxh+NEYQ5dl2drFv286598GrA7QG6ACtATpAa4AO0BqgA7QG6ACtATpAa4AO0BqgA7QG6ACtATpAa4AO0BqgA7QG6ACtATpAa4AO0BqgA7QG6ACtATpAa4AO0BqgA7QG6ACtATpAa4AO0BqgA7QG6ACtATpAa4AO0BqgA7QG6ACtATpAu37AD8eaBH5JQdVbAAAAAElFTkSuQmCC";
 
     this.load.texture('./textures/grid.png').then((texture) => {
       console.log(texture);
@@ -66,12 +61,6 @@ export class ThreePhysicsComponent extends Scene3D {
     // );
     // sphere1.body.setBounciness(0.4);
     // sphere1.body.applyForceX(0.3);
-
-    // let torus1 = this.physics.add.torus(
-    //   { y: 1, z: 3, tube: 0.2, radialSegments: 16, tubularSegments: 16 },
-    //   { lambert: { color: "orange" } }
-    // );
-    // torus1.body.applyForceX(5);
 
     //gltf loader duck
     // new GLTFLoader().loadAsync("/Duck.glb").then((gltf) => {
@@ -256,7 +245,7 @@ export class ThreePhysicsComponent extends Scene3D {
 
     const initCanon = (physics, camera) => {
       const raycaster = new THREE.Raycaster();
-      const force = 30;
+      const force = 15;
 
       window.addEventListener("pointerup", (event) => {
         // calculate mouse position in normalized device coordinates
@@ -270,42 +259,39 @@ export class ThreePhysicsComponent extends Scene3D {
         pos.add(raycaster.ray.origin);
 
         //n00ugles
-        // new GLTFLoader().loadAsync("/n00ugles.glb").then((gltf) => {
-        //   const model: any = gltf.scene.children[0];
-        //   model.position.x = pos.x;
-        //   model.position.y = pos.y;
-        //   model.position.z = pos.z;
-        //   model.scale.set(4,4,4);
-        //   const object = new ExtendedObject3D();
-        //   object.add(model);
-        //   this.add.existing(object);
-        //   this.physics.add.existing(model, { shape: "convex" });
-        //   pos.copy(raycaster.ray.direction);
-        //   pos.multiplyScalar(24);
-        //   console.log(model);
-        //   console.log(object);
-        //   // sphere.body.applyForce(pos.x * force, pos.y * force, pos.z * force);
-        //   model.body.applyForce(pos.x * force, pos.y * force, pos.z * force);
-        // });
+        new GLTFLoader().loadAsync("./models/n00ugles.glb").then((gltf) => {
+          const model: any = gltf.scene.children[0];
+          model.position.x = pos.x;
+          model.position.y = pos.y;
+          model.position.z = pos.z;
+          model.scale.set(4,4,4);
+          const object = new ExtendedObject3D();
+          object.add(model);
+          this.add.existing(object);
+          this.physics.add.existing(model, { shape: "convex", mass:10 });
+          pos.copy(raycaster.ray.direction);
+          pos.multiplyScalar(24);
+          model.body.applyForce(pos.x * force, pos.y * force, pos.z * force);
+        });
 
         //ball
-        const sphere = physics.add.sphere(
-          {
-            radius: 0.15,
-            x: pos.x,
-            y: pos.y,
-            z: pos.z,
-            mass: 20,
-            bufferGeometry: true,
-          },
-          { phong: { color: 0x202020 } }
-        );
-        sphere.body.setBounciness(0.2);
+        // const sphere = physics.add.sphere(
+        //   {
+        //     radius: 0.15,
+        //     x: pos.x,
+        //     y: pos.y,
+        //     z: pos.z,
+        //     mass: 20,
+        //     bufferGeometry: true,
+        //   },
+        //   { phong: { color: 0x202020 } }
+        // );
+        // sphere.body.setBounciness(0.2);
 
-        pos.copy(raycaster.ray.direction);
-        pos.multiplyScalar(24);
+        // pos.copy(raycaster.ray.direction);
+        // pos.multiplyScalar(24);
 
-        sphere.body.applyForce(pos.x * force, pos.y * force, pos.z * force);
+        // sphere.body.applyForce(pos.x * force, pos.y * force, pos.z * force);
       });
     };
 
