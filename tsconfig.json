@@ -6,6 +6,7 @@
     { "path": "packages/vrbs-contracts" },
     { "path": "packages/vrbs-sdk" },
     { "path": "packages/vrbs-subgraph" },
+    { "path": "packages/vrbs-reveal" },
     { "path": "packages/vrbs-webapp" }
   ]
 }
