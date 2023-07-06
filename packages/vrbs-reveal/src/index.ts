@@ -3,9 +3,9 @@ import { Scene3D, PhysicsLoader, Project, ExtendedObject3D } from 'enable3d';
 import * as THREE from 'three';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
 import Click from './utils/click.js';
-import { SoftBody, bunnyMesh } from './softbody';
 
 export class ThreePhysicsComponent extends Scene3D {
+  cloth: any;
   constructor() {
     super();
   }
@@ -56,10 +56,6 @@ export class ThreePhysicsComponent extends Scene3D {
     if (debug) {
       this.physics.debug?.enable();
     }
-
-    // this.bunny = new SoftBody(bunnyMesh, this.scene);
-    // this.physics.physicsWorld.addSoftBody(this.bunny, 1, -1);
-    // console.log(this.bunny);
 
     //soft body
     const bufferGeometryUtils = BufferGeometryUtils.BufferGeometryUtils;
@@ -130,7 +126,7 @@ export class ThreePhysicsComponent extends Scene3D {
         volumeSoftBody.get_m_materials().at(0).set_m_kAST(0.9);
 
         volumeSoftBody.setTotalMass(mass, false);
-        Ammo.castObject(volumeSoftBody, Ammo.btCollisionObject).getCollisionShape().setMargin(0.04);
+        // Ammo.castObject(volumeSoftBody, Ammo.btCollisionObject).getCollisionShape().setMargin(0.04);
         this.physics.physicsWorld.addSoftBody(volumeSoftBody, 1, -1);
         model.userData.physicsBody = volumeSoftBody;
         // Disable deactivation
@@ -204,7 +200,7 @@ export class ThreePhysicsComponent extends Scene3D {
       bufGeometry.ammoIndexAssociation = [];
 
       for (let i = 0; i < numIdxVertices; i++) {
-        const association = [];
+        const association: number[] = [];
         bufGeometry.ammoIndexAssociation.push(association);
 
         const i3 = i * 3;
@@ -316,7 +312,7 @@ export class ThreePhysicsComponent extends Scene3D {
 
       clothSoftBody.setTotalMass(0.9, false);
       clothSoftBody.rotate(new Ammo.btQuaternion(0, -1.55, 0, 1.55));
-      Ammo.castObject(clothSoftBody, Ammo.btCollisionObject).getCollisionShape().setMargin(0.04);
+      // Ammo.castObject(clothSoftBody, Ammo.btCollisionObject).getCollisionShape().setMargin(0.04);
       this.physics.physicsWorld.addSoftBody(clothSoftBody, 1, -1);
       this.cloth.userData.physicsBody = clothSoftBody;
       // Disable deactivation
