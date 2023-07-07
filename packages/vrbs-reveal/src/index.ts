@@ -2,12 +2,24 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Scene3D, PhysicsLoader, Project, ExtendedObject3D } from 'enable3d';
 import * as THREE from 'three';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
+import {jsx, render} from 'nano-jsx'
 import Click from './utils/click.js';
 
 export class ThreePhysicsComponent extends Scene3D {
   cloth: any;
+  controls: any;
+  frank: any;
+  pingPongAudio: any;
+  quackAudio: any;
+  glasses!: any[];
+  shots: number;
+  debug: boolean;
+
   constructor() {
     super();
+    this.glasses = [];
+    this.shots = 0;
+    this.debug = false;
   }
 
   async init() {
@@ -17,20 +29,34 @@ export class ThreePhysicsComponent extends Scene3D {
 
   async preload() {}
 
+  addStats(total) {
+    const el = jsx`<div style="position: relative; height: 0; top: 96px; text-align: center;" id="stats"></div>`;
+    document.getElementById('info-text')?.after(render(el));
+    this.updateStats(total, 0);
+  }
+
+  updateStats(total, active) {
+    const text = jsx`<p>Total Shots: ${total} / Active: ${active} / Inactive: ${
+      total - active
+    } / Debug: ${this.debug}</p>`;
+    const needUpdate = document.getElementById('stats')?.innerHTML !== text;
+    if (needUpdate) render(jsx`${text}`, document.getElementById('stats'));
+  }
+
   async create() {
-    const debug = false;
     // set up scene (light, ground, grid, sky, orbitControls)
     this.warpSpeed('-ground');
 
+    this.addStats(this.shots);
     // position camera
-    this.camera.position.set(3, 5, 20);
+    this.camera.position.set(3, 10, 30);
     this.camera.lookAt(0, 0, 0);
-    console.log(this.physics);
-    console.log(this.scene);
-    this.load.texture('./textures/7.jpg').then(texture => {
-      // console.log(texture);
+    const audioLoader = new THREE.AudioLoader();
+    const listener = new THREE.AudioListener();
+
+    // create the floor with texture
+    this.load.texture('./textures/sand.jpg').then(texture => {
       texture.wrapS = texture.wrapT = 1;
-      // texture.repeat.set(25, 25);
 
       const ground = this.physics.add.ground(
         {
@@ -52,11 +78,38 @@ export class ThreePhysicsComponent extends Scene3D {
       ground.body.setRestitution(1);
     });
 
+    //add water
+    const waterTextures = await Promise.all([
+      this.load.texture('./textures/Water_1_M_Normal.jpg'),
+      this.load.texture('./textures/Water_2_M_Normal.jpg'),
+    ]);
+
+    waterTextures[0].needsUpdate = true;
+    waterTextures[1].needsUpdate = true;
+
+    this.misc.water({
+      y: 0,
+      x: 15,
+      z: 15,
+      normalMap0: waterTextures[0],
+      normalMap1: waterTextures[1],
+    });
+
     // enable physics debug
-    if (debug) {
+    if (this.debug) {
       this.physics.debug?.enable();
     }
 
+    //audio
+    audioLoader.load('./sounds/ping_pong.mp3', buffer => {
+      this.pingPongAudio = new THREE.PositionalAudio(listener);
+      this.pingPongAudio.setBuffer(buffer);
+    });
+
+    audioLoader.load('./sounds/quack.mp3', buffer => {
+      this.quackAudio = new THREE.PositionalAudio(listener);
+      this.quackAudio.setBuffer(buffer);
+    });
     //soft body
     const bufferGeometryUtils = BufferGeometryUtils.BufferGeometryUtils;
     const softBodyHelpers = new Ammo.btSoftBodyHelpers();
@@ -224,10 +277,10 @@ export class ThreePhysicsComponent extends Scene3D {
       return bufGeometry;
     };
 
-    const volumeMass = 15;
-    const sphereGeometry = new THREE.SphereGeometry(1.5, 40, 25);
-    sphereGeometry.translate(5, 2, 8);
-    createSoftVolume(sphereGeometry, volumeMass, 250);
+    // const volumeMass = 15;
+    // const sphereGeometry = new THREE.SphereGeometry(1.5, 40, 25);
+    // sphereGeometry.translate(5, 2, 8);
+    // createSoftVolume(sphereGeometry, volumeMass, 250);
     //soft body end
 
     // cloth body
@@ -237,14 +290,20 @@ export class ThreePhysicsComponent extends Scene3D {
     // The flag
     const addFlag = () => {
       // bar
-      const bar = this.add.cylinder({ y: 7.5, x: -5, height: 5, radiusTop: 0.1, radiusBottom: 0.1 });
+      const bar = this.add.cylinder({
+        y: 9,
+        x: -5,
+        height: 5,
+        radiusTop: 0.1,
+        radiusBottom: 0.1,
+      });
       // bar.rotateX(Math.PI / 2);
       bar.rotation.set(1, 0, Math.PI / 2);
       this.physics.add.existing(bar, { collisionFlags: 1, mass: 0 });
 
       //pole
       const pole = this.add.cylinder({
-        y: 2.5,
+        y: 4,
         z: 0,
         x: -7.5,
         height: 10,
@@ -257,7 +316,7 @@ export class ThreePhysicsComponent extends Scene3D {
       const clothHeight = 3;
       const clothNumSegmentsZ = clothWidth * 5;
       const clothNumSegmentsY = clothHeight * 5;
-      const clothPos = new THREE.Vector3(0, 4.5, 7);
+      const clothPos = new THREE.Vector3(0, 6, 7);
 
       const clothGeometry = new THREE.PlaneBufferGeometry(
         clothWidth,
@@ -325,7 +384,6 @@ export class ThreePhysicsComponent extends Scene3D {
     };
 
     // add shape with physics
-    // let box1 = this.physics.add.box({}, { phong: { color: "green" } });
     // let sphere1 = this.physics.add.sphere(
     //   { y: 5, z: -3 },
     //   { lambert: { color: "yellow" } }
@@ -334,44 +392,55 @@ export class ThreePhysicsComponent extends Scene3D {
     // sphere1.body.applyForceX(0.3);
 
     //gltf loader duck
-    // new GLTFLoader().loadAsync("/Duck.glb").then((gltf) => {
-    //   const duck: any = gltf.scene.children[0];
-    //   duck.position.y -= 1;
-    //   const object = new ExtendedObject3D();
-    //   object.add(duck);
-    //   object.position.z = 6;
-    //   this.add.existing(object);
-    //   // this.physics.add.existing(object, {
-    //   //   shape: "box",
-    //   //   width: 2,
-    //   //   height: 2,
-    //   //   depth: 2,
-    //   // });
+    new GLTFLoader().loadAsync("./models/duck.glb").then((gltf) => {
+      const duck: any = gltf.scene.children[0];
+      duck.position.y -= 1;
+      const object = new ExtendedObject3D();
+      object.add(duck);
+      object.position.z = 10;
+      object.position.x = 10;
+      this.add.existing(object);
+      // this.physics.add.existing(object, {
+      //   shape: "box",
+      //   width: 2,
+      //   height: 2,
+      //   depth: 2,
+      // });
 
-    //   // duck.position.z = 6;
-    //   // this.scene.add(duck as any);
-    //   this.physics.add.existing(duck, { shape: "convex" });
-    // });
+      // duck.position.z = 6;
+      // this.scene.add(duck as any);
+      this.physics.add.existing(object, { shape: "convex" });
+      object.body.on.collision((otherObject, event) => {
+        if (otherObject.name !== 'ground' && event === 'start') {
+          console.log('n00ugles collided with duck');
+          this.quackAudio.play();
+        }
+      });
+    });
 
     const addStatue = () => {
-      //gltf loader statue
+      //add base
+      const base = this.physics.add.box(
+        { height: 2.5, width: 2.5, depth: 2.5, mass: 10, y: 1, breakable: true },
+        { phong: { color: 'gray' } },
+      );
+
       new GLTFLoader().loadAsync('./models/statue.glb').then(gltf => {
         const config = {
           // breakable: true,
-          // fractureImpulse: 5,
-          // collisionFlags: 3,
           width: 2,
           height: 6.4,
           depth: 2,
-          mass: 10,
+          mass: 1,
           shape: 'box',
         };
         const model: any = gltf.scene.children[0];
         model.position.y = -3.2;
-        model.scale.set(10,10,10);
+        model.scale.set(10, 10, 10);
         const object = new ExtendedObject3D();
         object.add(model);
-        object.position.z = -2.5;
+        object.position.y = 5.5;
+        object.position.z = 0;
         object.position.x = 0;
         this.add.existing(object);
         this.physics.add.existing(object, config);
@@ -425,7 +494,7 @@ export class ThreePhysicsComponent extends Scene3D {
         texture.repeat.set(1, 1);
 
         this.physics.add.box(
-          { y: 5, x: 0, z: -10, width: 10, height: 10, ...config },
+          { y: 7.5, x: 0, z: -10, width: 15, height: 15, ...config },
           {
             phong: {
               map: texture,
@@ -462,42 +531,85 @@ export class ThreePhysicsComponent extends Scene3D {
         reveal.body.setCollisionFlags(2);
       });
     };
-    // const addFrank = physics => {
-    //   const { factory } = physics;
 
-    //   const config = {
-    //     depth: 0.5,
-    //     breakable: false,
-    //     collisionFlags: 3,
-    //   };
+    const addFrank = () => {
+      new GLTFLoader().loadAsync('./models/frank.glb').then(gltf => {
+        const config = {
+          breakable: false,
+          width: 1,
+          height: 4,
+          depth: 1,
+          mass: 0,
+          shape: 'box',
+        };
 
-    //   const config2 = {
-    //     depth: 0.2,
-    //     breakable: false,
-    //   };
+        const model: any = gltf.scene.children[0];
+        model.scale.set(0.015, 0.015, 0.015);
+        model.position.y = -2;
+        const object = new ExtendedObject3D();
+        object.add(model);
+        object.position.z = 2.5;
+        object.position.x = -5;
+        object.position.y = 2;
+        this.add.existing(object);
+        this.physics.add.existing(object, config);
 
-    //   this.load.texture('./textures/vrb.png').then(texture => {
-    //     // console.log(texture);
-    //     texture.wrapS = texture.wrapT = 1; // RepeatWrapping
-    //     texture.repeat.set(1, 1);
+        object.body.on.collision((otherObject, event) => {
+          if (otherObject.name !== 'ground' && event === 'start') {
+            console.log('n00ugles collided with frank');
+            // console.log(this.frank);
+            console.log(object);
+            this.pingPongAudio.play();
+          }
+        });
+      });
+    };
 
-    //     physics.add.box({ y: 5, x: 0, z: -10, width: 10, height: 10, ...config });
-    //     const reveal = physics.add.box(
-    //       { y: 5, x: 0, z: -10, width: 5, height: 5, ...config2 },
-    //       {
-    //         phong: {
-    //           map: texture,
-    //           // transparent: true,
-    //           opacity: 0.8,
-    //           // color: 0xffffff,
-    //         },
-    //       },
-    //     );
-    //     reveal.body.setCollisionFlags(2);
-    //   });
-    // };
+    const addPalmTree1 = () => {
+      new GLTFLoader().loadAsync('./models/palmtree1.glb').then(gltf => {
+        const config = {
+          breakable: false,
+          // width: 1,
+          // height: 8,
+          // depth: 1,
+          mass: 0,
+          shape: 'convex',
+        };
 
-    const initCanon = (physics, camera) => {
+        const model: any = gltf.scene.children[0];
+        model.scale.set(0.5, 0.5, 0.5);
+        const object = new ExtendedObject3D();
+        object.add(model);
+        object.position.z = 5;
+        object.position.x = 10;
+        this.add.existing(object);
+        this.physics.add.existing(object, config);
+      });
+    };
+
+    const addPalmTree2 = () => {
+      new GLTFLoader().loadAsync('./models/palmtree2.glb').then(gltf => {
+        const config = {
+          breakable: false,
+          // width: 1,
+          // height: 8,
+          // depth: 1,
+          mass: 0,
+          shape: 'convex',
+        };
+
+        const model: any = gltf.scene.children[0];
+        model.scale.set(0.5, 0.5, 0.5);
+        const object = new ExtendedObject3D();
+        object.add(model);
+        object.position.z = 5;
+        object.position.x = 20;
+        this.add.existing(object);
+        this.physics.add.existing(object, config);
+      });
+    };
+
+    const initCanon = camera => {
       const raycaster = new THREE.Raycaster();
       const force = 15;
 
@@ -508,12 +620,11 @@ export class ThreePhysicsComponent extends Scene3D {
         raycaster.setFromCamera({ x, y }, camera);
 
         const pos = new THREE.Vector3();
-
         pos.copy(raycaster.ray.direction);
         pos.add(raycaster.ray.origin);
 
         //n00ugles
-        new GLTFLoader().loadAsync('./models/n00ugles.glb').then(gltf => {
+        new GLTFLoader().loadAsync('./models/glasses_green.glb').then(gltf => {
           const model: any = gltf.scene.children[0];
           model.position.x = pos.x;
           model.position.y = pos.y;
@@ -523,14 +634,12 @@ export class ThreePhysicsComponent extends Scene3D {
           object.add(model);
           this.add.existing(object);
           this.physics.add.existing(model, { shape: 'convex', mass: 10 });
+          model.body.needUpdate = true;
           pos.copy(raycaster.ray.direction);
           pos.multiplyScalar(24);
           model.body.applyForce(pos.x * force, pos.y * force, pos.z * force);
-
-          setTimeout(() => {
-            this.destroy(object);
-            // this.destroy(object);
-          }, 2000);
+          this.glasses.push({ model, active: true });
+          this.shots++;
         });
 
         //ball
@@ -557,13 +666,27 @@ export class ThreePhysicsComponent extends Scene3D {
     addWall();
     addNft();
     addStatue();
+    addFrank();
+    addPalmTree1();
+    addPalmTree2();
     // addBank(this.physics);
     addFlag();
     // addHouse(this.physics);
-    initCanon(this.physics, this.camera);
+    initCanon(this.camera);
   }
 
   update(time) {
+    this.glasses.forEach(g => {
+      if (g.active && g.model.position.y < -10) {
+        g.model.body.setCollisionFlags(6);
+        g.model.visible = false;
+        g.model.body.physics.destroy(g.model.body);
+        g.active = false;
+      }
+    });
+
+    this.updateStats(this.glasses.length, this.glasses.filter(g => g.active).length);
+
     // update ball
     // this.ball.position.x -= Math.sin(time) * 0.1;
     // this.ball.body.needUpdate = true;
@@ -571,8 +694,8 @@ export class ThreePhysicsComponent extends Scene3D {
     // update cloth
     const softCloth = this.cloth.userData.physicsBody;
     const clothPositions = this.cloth.geometry.attributes.position.array;
-    let numVerts = clothPositions.length / 3;
-    let nodes = softCloth.get_m_nodes();
+    const numVerts = clothPositions.length / 3;
+    const nodes = softCloth.get_m_nodes();
     let indexFloat = 0;
 
     for (let i = 0; i < numVerts; i++) {
@@ -626,68 +749,3 @@ const config = {
   softBodies: true,
 };
 PhysicsLoader('/ammo', () => new Project(config));
-
-// const addHouse = physics => {
-//   const { factory } = physics;
-
-//   const config = {
-//     depth: 0.4,
-//     breakable: true,
-//     fractureImpulse: 5,
-//     collisionFlags: 3,
-//   };
-
-//   // front
-//   physics.add.box({ y: 3, x: 2, z: 4, width: 4, height: 2, ...config });
-//   physics.add.box({ y: 1, x: 2, z: 4, width: 4, height: 2, ...config });
-//   physics.add.box({ y: 1, x: -2, z: 4, width: 4, height: 2, ...config });
-//   physics.add.box({ y: 3, x: -2, z: 4, width: 4, height: 2, ...config });
-
-//   // back
-//   physics.add.box({ y: 1, x: -2, z: 0, width: 4, height: 2, ...config });
-//   physics.add.box({ y: 3, x: -2, z: 0, width: 4, height: 2, ...config });
-//   physics.add.box({ y: 1, x: 2, z: 0, width: 4, height: 2, ...config });
-//   physics.add.box({ y: 3, x: 2, z: 0, width: 4, height: 2, ...config });
-
-//   // left and right
-//   physics.add.box({
-//     ...config,
-//     y: 2,
-//     x: -4,
-//     z: 2,
-//     depth: 4,
-//     height: 4,
-//     width: 1,
-//   });
-//   physics.add.box({
-//     ...config,
-//     y: 2,
-//     x: 4,
-//     z: 2,
-//     depth: 4,
-//     height: 4,
-//     width: 1,
-//   });
-
-//   // roof
-//   let r1 = factory.add.box({
-//     y: 4.75,
-//     x: 0,
-//     z: 0.5,
-//     width: 8,
-//     height: 4,
-//     ...config,
-//   });
-//   let r2 = factory.add.box({
-//     y: 4.75,
-//     x: 0,
-//     z: 3.5,
-//     width: 8,
-//     height: 4,
-//     ...config,
-//   });
-//   r1.rotateX(Math.PI / 4);
-//   r2.rotateX(-Math.PI / 4);
-//   physics.add.existing(r1, { collisionFlags: 3, breakable: true });
-//   physics.add.existing(r2, { collisionFlags: 3, breakable: true });
-// };
