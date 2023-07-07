@@ -16,6 +16,7 @@
     "@enable3d/ammo-physics": "0.22.0-dev.1",
     "@enable3d/three-graphics": "0.22.0-dev.1",
     "enable3d": "^0.21.0",
+    "nano-jsx": "^0.0.37",
     "three": "0.125.2"
   },
   "devDependencies": {

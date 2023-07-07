@@ -263,7 +263,7 @@ const Bid: React.FC<{
 
   const fomoVrbsBtnOnClickHandler = () => {
     // Open Fomo Vrbs in a new tab
-    window.open('https://fomovrbs.wtf', '_blank')?.focus();
+    window.open('https://vrbs-reveal.netlify.app/', '_blank')?.focus();
   };
 
   const isWalletConnected = activeAccount !== undefined;

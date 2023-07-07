@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vrbs Reveal</title>
+    <!-- <script src="https://unpkg.com/nano-jsx@0.0.15/bundles/nano.slim.min.js"></script> -->
+    <!-- <script src="/lib/phaser.min.js?ver=3.52.0"></script> -->
+    <!-- <script src="/lib/enable3d/enable3d.phaserExtension.0.25.3.min.js"></script> -->
   </head>
   <style>
     html,
@@ -12,7 +15,26 @@
       padding: 0;
       overflow: hidden;
     }
+    div#info-text {
+      position: absolute;
+      justify-content: left;
+      font-size: 18px;
+      height: 0;
+      top: 36px;
+      z-index: 1;
+      left: 35px;
+      margin: 0px 48px;
+      text-align: left;
+    }
+    div#stats {
+      position: absolute !important;
+      top: 20px !important;
+      left: 40px !important;
+      text-align: left !important;
+    }
   </style>
-  <body></body>
+  <body>
+    <div id="info-text"></div>
+  </body>
   <script src="./index.js"></script>
 </html>
