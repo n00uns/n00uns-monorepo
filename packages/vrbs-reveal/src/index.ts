@@ -2,7 +2,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { Scene3D, PhysicsLoader, Project, ExtendedObject3D } from 'enable3d';
 import * as THREE from 'three';
 import * as BufferGeometryUtils from 'three/examples/jsm/utils/BufferGeometryUtils.js';
-import {jsx, render} from 'nano-jsx'
+import { jsx, render } from 'nano-jsx';
 import Click from './utils/click.js';
 
 export class ThreePhysicsComponent extends Scene3D {
@@ -49,7 +49,7 @@ export class ThreePhysicsComponent extends Scene3D {
 
     this.addStats(this.shots);
     // position camera
-    this.camera.position.set(3, 10, 30);
+    this.camera.position.set(7, 20, 40);
     this.camera.lookAt(0, 0, 0);
     const audioLoader = new THREE.AudioLoader();
     const listener = new THREE.AudioListener();
@@ -392,7 +392,7 @@ export class ThreePhysicsComponent extends Scene3D {
     // sphere1.body.applyForceX(0.3);
 
     //gltf loader duck
-    new GLTFLoader().loadAsync("./models/duck.glb").then((gltf) => {
+    new GLTFLoader().loadAsync('./models/duck.glb').then(gltf => {
       const duck: any = gltf.scene.children[0];
       duck.position.y -= 1;
       const object = new ExtendedObject3D();
@@ -409,7 +409,7 @@ export class ThreePhysicsComponent extends Scene3D {
 
       // duck.position.z = 6;
       // this.scene.add(duck as any);
-      this.physics.add.existing(object, { shape: "convex" });
+      this.physics.add.existing(object, { shape: 'convex' });
       object.body.on.collision((otherObject, event) => {
         if (otherObject.name !== 'ground' && event === 'start') {
           console.log('n00ugles collided with duck');
@@ -421,7 +421,7 @@ export class ThreePhysicsComponent extends Scene3D {
     const addStatue = () => {
       //add base
       const base = this.physics.add.box(
-        { height: 2.5, width: 2.5, depth: 2.5, mass: 10, y: 1, breakable: true },
+        { height: 2.5, width: 2.5, depth: 2.5, mass: 10, y: 1, z: 10, breakable: true },
         { phong: { color: 'gray' } },
       );
 
@@ -440,8 +440,61 @@ export class ThreePhysicsComponent extends Scene3D {
         const object = new ExtendedObject3D();
         object.add(model);
         object.position.y = 5.5;
-        object.position.z = 0;
+        object.position.z = 10;
         object.position.x = 0;
+        this.add.existing(object);
+        this.physics.add.existing(object, config);
+      });
+    };
+
+    const addRock = pos => {
+      new GLTFLoader().loadAsync('./models/rocklarge.glb').then(gltf => {
+        const config = {
+          breakable: true,
+          width: 9.8,
+          height: 2.5,
+          depth: 3,
+          mass: 10,
+          shape: 'box',
+        };
+        const model: any = gltf.scene.children[0];
+        model.position.x = 0;
+        model.position.z = 0;
+        model.position.y = -1.25;
+        model.scale.set(2, 1, 1);
+        const object = new ExtendedObject3D();
+        object.add(model);
+        object.position.x = pos.x;
+        object.position.y = pos.y;
+        object.position.z = pos.z;
+        object.geometry = model.geometry;
+        this.add.existing(object);
+        this.physics.add.existing(object, config);
+      });
+    };
+
+    const addRockVertical = pos => {
+      new GLTFLoader().loadAsync('./models/rocklarge.glb').then(gltf => {
+        const config = {
+          breakable: true,
+          width: 2,
+          height: 9.8,
+          depth: 3,
+          mass: 10,
+          shape: 'box',
+        };
+        const model: any = gltf.scene.children[0];
+        model.position.x = 1;
+        model.position.z = 0;
+        model.position.y = 0;
+        model.scale.set(2, 1, 1);
+        model.rotateY(Math.PI * 0.5);
+        const object = new ExtendedObject3D();
+        object.add(model);
+        object.position.x = pos.x;
+        object.position.y = pos.y;
+        object.position.z = pos.z;
+        object.geometry = model.geometry;
         this.add.existing(object);
         this.physics.add.existing(object, config);
       });
@@ -452,30 +505,33 @@ export class ThreePhysicsComponent extends Scene3D {
       new GLTFLoader().loadAsync('./models/chase.glb').then(gltf => {
         const config = {
           breakable: true,
-          // fractureImpulse: 5,
-          // collisionFlags: 3,
-          // width: 1,
-          // height: 3.2,
-          // depth: 1,
-          // mass: 10,
+          width: 2,
+          height: 9.8,
+          depth: 3,
+          mass: 10,
           shape: 'convex',
         };
 
         const model: any = gltf.scene.children[0];
+        let geo;
         model.traverse(child => {
           if (child.isMesh) {
             child.castShadow = child.receiveShadow = false;
             child.material.metalness = 0;
             child.material.roughness = 1;
+            if (!geo) {
+              geo = child.geometry;
+            }
           }
         });
         model.position.y = -1.6;
-        model.scale.set(2, 2, 2);
+        model.scale.set(4, 4, 4);
         const object = new ExtendedObject3D();
         object.add(model);
-        object.position.z = 0;
-        object.position.x = -15;
-        object.rotation.set(0, 1, 0);
+        object.position.z = 12;
+        object.position.x = -20;
+        object.rotation.set(0, Math.PI / 2, 0);
+        object.geometry = geo;
         this.add.existing(object);
         this.physics.add.existing(object, config);
       });
@@ -518,7 +574,7 @@ export class ThreePhysicsComponent extends Scene3D {
         texture.repeat.set(1, 1);
 
         const reveal = this.physics.add.box(
-          { y: 5, x: 0, z: -10, width: 5, height: 5, ...config },
+          { y: 10, x: 0, z: -10, width: 5, height: 5, ...config },
           {
             phong: {
               map: texture,
@@ -549,7 +605,7 @@ export class ThreePhysicsComponent extends Scene3D {
         const object = new ExtendedObject3D();
         object.add(model);
         object.position.z = 2.5;
-        object.position.x = -5;
+        object.position.x = 12;
         object.position.y = 2;
         this.add.existing(object);
         this.physics.add.existing(object, config);
@@ -577,7 +633,8 @@ export class ThreePhysicsComponent extends Scene3D {
         };
 
         const model: any = gltf.scene.children[0];
-        model.scale.set(0.5, 0.5, 0.5);
+        model.scale.set(0.7, 0.7, 0.7);
+        model.rotateY(-3.5);
         const object = new ExtendedObject3D();
         object.add(model);
         object.position.z = 5;
@@ -599,7 +656,8 @@ export class ThreePhysicsComponent extends Scene3D {
         };
 
         const model: any = gltf.scene.children[0];
-        model.scale.set(0.5, 0.5, 0.5);
+        model.scale.set(0.7, 0.7, 0.7);
+        model.rotateY(-3.5);
         const object = new ExtendedObject3D();
         object.add(model);
         object.position.z = 5;
@@ -633,7 +691,7 @@ export class ThreePhysicsComponent extends Scene3D {
           const object = new ExtendedObject3D();
           object.add(model);
           this.add.existing(object);
-          this.physics.add.existing(model, { shape: 'convex', mass: 10 });
+          this.physics.add.existing(model, { shape: 'hull', mass: 10 });
           model.body.needUpdate = true;
           pos.copy(raycaster.ray.direction);
           pos.multiplyScalar(24);
@@ -666,10 +724,13 @@ export class ThreePhysicsComponent extends Scene3D {
     addWall();
     addNft();
     addStatue();
+    addRock(new THREE.Vector3(-12, 10, -5));
+    addRockVertical(new THREE.Vector3(-15, 1, -5));
+    addRockVertical(new THREE.Vector3(-10, 1, -5));
     addFrank();
     addPalmTree1();
     addPalmTree2();
-    // addBank(this.physics);
+    addBank();
     addFlag();
     // addHouse(this.physics);
     initCanon(this.camera);
