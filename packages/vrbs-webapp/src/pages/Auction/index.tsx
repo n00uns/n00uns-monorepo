@@ -8,6 +8,7 @@ import useOnDisplayAuction from '../../wrappers/onDisplayAuction';
 import { useEffect } from 'react';
 import ProfileActivityFeed from '../../components/ProfileActivityFeed';
 import VrbIntroSection from '../../components/VrbIntroSection';
+// import bg from '../../assets/home/home-sec1.png';
 
 interface AuctionPageProps {
   initialAuctionId?: number;

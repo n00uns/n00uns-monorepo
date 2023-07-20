@@ -24,5 +24,5 @@
 }
 
 .invalid {
-  border: 2px solid var(--brand-color-red) !important;
+  border: 2px solid var(--brand-color-green) !important;
 }

@@ -4,8 +4,8 @@ import Section from '../../layout/Section';
 import { Col, Nav } from 'react-bootstrap';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
-import vrbsIosGif from '../../assets/vrbs-ios.gif';
-import dlFromAppStoreImg from '../../assets/download-on-app-store.svg';
+// import vrbsIosGif from '../../assets/vrbs-ios.gif';
+// import dlFromAppStoreImg from '../../assets/download-on-app-store.svg';
 
 const VrbIntroSection = () => {
   return (
@@ -14,7 +14,7 @@ const VrbIntroSection = () => {
         <Col lg={6}>
           <div className={classes.textWrapper}>
             <h1>
-              <Trans>One Vrb, Every Day, Forever.</Trans>
+              <Trans>One Vrb, One Vote, One Action Filled Movement.</Trans>
             </h1>
             <p>
               <Trans>
@@ -27,22 +27,14 @@ const VrbIntroSection = () => {
         </Col>
         <Col lg={6} className={classes.embedContainer}>
           <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/CBmCAjOu_-A"
             title="This is Vrbs"
-            src="https://player.vimeo.com/video/781320182?h=db24612c0a&color=eaeae5&title=0&byline=0&portrait=0"
             frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
-          <small className={`${classes.videoSubtitle} text-muted`}>
-            This video was commissioned in{' '}
-            <Nav.Link as={Link} to="/vote/113">
-              Prop 113
-            </Nav.Link>{' '}
-            and minted in{' '}
-            <Nav.Link as={Link} to="/vote/190">
-              Prop 190
-            </Nav.Link>
-            .
-          </small>
         </Col>
       </Section>
       {/* <Section fullWidth={false} className={classes.iosSection}>

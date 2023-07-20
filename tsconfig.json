@@ -1,4 +1,7 @@
 {
+  "compilerOptions": {
+    "jsx": "react"
+  },
   "references": [
     { "path": "packages/vrbs-api" },
     { "path": "packages/vrbs-assets" },
