@@ -97,7 +97,7 @@ const Auction: React.FC<AuctionProps> = props => {
           </Col>
         </Row>
       </Container>
-      <img src={pixel_border} className={classes.auctionBorder}alt="border" />
+      {/* <img src={pixel_border} className={classes.auctionBorder}alt="border" /> */}
     </div>
   );
 };
