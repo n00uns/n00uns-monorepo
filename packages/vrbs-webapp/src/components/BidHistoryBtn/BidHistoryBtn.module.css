@@ -37,7 +37,7 @@
 
 .bidHistoryWarm {
   margin-left: 0.5rem;
-  color: var(--brand-color-red);
+  color: var(--brand-color-green);
   font-family: 'PT Root UI';
   font-weight: bold;
   font-size: 1rem;
@@ -61,7 +61,7 @@
 
 .bidHistoryWarm:hover {
   filter: brightness(110%);
-  color: var(--brand-color-red);
+  color: var(--brand-color-green);
 }
 
 .bidHistoryCool:hover {

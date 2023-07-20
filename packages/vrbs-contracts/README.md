@@ -4,7 +4,7 @@
 
 Vrbs are an experimental attempt to improve the formation of on-chain avatar communities. While projects such as CryptoPunks have attempted to bootstrap digital community and identity, Vrbs attempt to bootstrap identity, community, governance and a treasury that can be used by the community for the creation of long-term value.
 
-One Vrb is generated and auctioned every day, forever. All Vrb artwork is stored and rendered on-chain. See more information at [vrbs.wtf](https://vrbs.wtf/).
+One Vrb, One Vote, One Action Filled Movement. All Vrb artwork is stored and rendered on-chain. See more information at [vrbs.wtf](https://vrbs.wtf/).
 
 ## Contracts
 

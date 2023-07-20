@@ -17,6 +17,7 @@ import {
 } from '../../state/slices/onDisplayAuction';
 import { beige, grey } from '../../utils/vrbBgColors';
 import pixel_border from '../../assets/pixel_border.svg';
+import bg from '../../assets/home/home-sec1.png';
 
 interface AuctionProps {
   auction?: IAuction;
@@ -82,6 +83,7 @@ const Auction: React.FC<AuctionProps> = props => {
 
   return (
     <div style={{ backgroundColor: stateBgColor }} className={classes.wrapper}>
+      <img src={bg} className={classes.auctionBg} alt="backgroundImage" />
       <Container fluid="xl">
         <Row>
           <Col lg={{ span: 6 }} className={classes.vrbContentCol}>
@@ -95,7 +97,7 @@ const Auction: React.FC<AuctionProps> = props => {
           </Col>
         </Row>
       </Container>
-      <img src={pixel_border} className={classes.auctionBorder}alt="border" />
+      {/* <img src={pixel_border} className={classes.auctionBorder}alt="border" /> */}
     </div>
   );
 };
