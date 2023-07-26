@@ -40,7 +40,7 @@ const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) 
   );
   return (
     <>
-      <img src={pixel_border} className={classes.documentationBorder} alt="border" />
+      {/* <img src={pixel_border} className={classes.documentationBorder} alt="border" /> */}
 
       <Section
         fullWidth={false}
