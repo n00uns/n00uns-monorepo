@@ -1,7 +1,7 @@
 import { keccak256 as solidityKeccak256 } from '@ethersproject/solidity';
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber';
 import { VrbSeed, VrbData } from './types';
-import { images, bgcolors } from './image-data.json';
+import { images, bgcolors, fullImages } from './image-data.json';
 
 const { bodies, accessories, heads, glasses } = images;
 
@@ -11,15 +11,11 @@ type ObjectKey = keyof typeof images;
  * Get encoded part and background information using a Vrb seed
  * @param seed The Vrb seed
  */
-export const getVrbData = (seed: VrbSeed): VrbData => {
+export const getVrbData = (vrbId: string): VrbData => {
+  const parsedVrbId = parseInt(vrbId, 10);
+
   return {
-    parts: [
-      bodies[0],
-      accessories[0],
-      heads[0],
-      glasses[0],
-  ],
-  background: bgcolors[0],
+    fullImage: (fullImages[parsedVrbId])
   };
 };
 
