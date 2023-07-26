@@ -31,7 +31,7 @@
 }
 
 .bidRowWarm a {
-  color: var(--brand-color-red) !important;
+  color: var(--brand-color-green) !important;
   font-weight: bold;
   text-decoration: none;
   transition: all 0.2s ease-in-out;

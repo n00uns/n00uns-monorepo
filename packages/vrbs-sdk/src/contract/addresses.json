@@ -25,12 +25,12 @@
     "vrbsDAOLogicV1": "0x27c9e62fc1F1334eb2A090506675Ec31df878E00"
   },
   "5": {
-    "vrbsToken": "0x1d0030f304b542D5A5F77CC0E5945fd79ec89D8E",
+    "vrbsToken": "0x5962130eBBdf27ce13107aAeb7622CD3F957761f",
     "vrbsSeeder": "0xF6a38E8235916334268da317EC84F5dfcfB9e023",
     "vrbsDescriptor": "0xB6D0AF8C27930E13005Bf447d54be8235724a102",
     "nftDescriptor": "0x9417e5d955e6e1deA90499Baa527C9d6360b737f",
-    "vrbsAuctionHouse": "0x047B373629148A30299e11a1582d9EAd8181ff46",
-    "vrbsAuctionHouseProxy": "0xC143D0F48E0ba1e547Ff0fE489b4DC7A90063683",
+    "vrbsAuctionHouse": "0xcAAa39016c1F10C9cC6Ee90daC7E5d08c7b09E5F",
+    "vrbsAuctionHouseProxy": "0xcAAa39016c1F10C9cC6Ee90daC7E5d08c7b09E5F",
     "vrbsAuctionHouseProxyAdmin": "0xC6Fb7F9707ba1E0B0fC008bFC72c4C1DA255695E",
     "vrbsDaoExecutor": "0x2f12ABA664E6D2b4DDD264E2a175d29703836AaE",
     "vrbsDAOProxy": "0xD08faCeb444dbb6b063a51C2ddFb564Fa0f8Dce0",

@@ -16,7 +16,7 @@
   height: 3rem;
   color: white;
   border: transparent;
-  background-color: var(--brand-color-red);
+  background-color: var(--brand-color-green);
   font-weight: bold;
   letter-spacing: normal;
   font-size: 19px;
@@ -101,7 +101,7 @@
   height: 3rem;
   color: white;
   border: transparent;
-  background-color: var(--brand-color-red);
+  background-color: var(--brand-color-green);
   font-weight: bold;
   font-family: 'Satoshi Regular';
   font-size: 18px;

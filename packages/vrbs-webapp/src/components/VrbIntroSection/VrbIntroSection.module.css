@@ -1,6 +1,7 @@
 .videoSection {
   padding: 4rem 0 !important;
   background-color: var(--brand-color-beige);
+  z-index: 1;
 }
 
 .iosSection {

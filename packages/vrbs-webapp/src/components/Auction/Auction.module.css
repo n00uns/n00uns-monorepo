@@ -1,6 +1,6 @@
 .vrbWrapper {
   /* align-self: flex-end; */
-  width: 100%;
+  width: 74%;
 }
 
 .vrbContentCol {
@@ -8,6 +8,8 @@
 }
 
 .auctionActivityCol {
+  opacity: 1;
+  z-index: 3;
   margin-top: 3px;
   padding-right: 2.5rem;
   padding-bottom: 0rem;
@@ -17,6 +19,13 @@
 
 .auctionBorder {
   width: 100%;
+}
+
+.auctionBg {
+  width: 100%;
+  position:absolute;
+  transform: translateY(-131px);
+  opacity: 20%;
 }
 
 @media (max-width: 991.98px) {
