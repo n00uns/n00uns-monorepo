@@ -9,16 +9,16 @@ import AuctionTimer from '../AuctionTimer';
 import CurrentBid from '../CurrentBid';
 import Winner from '../Winner';
 import BidHistory from '../BidHistory';
-// import AuctionNavigation from '../AuctionNavigation';
+import AuctionNavigation from '../AuctionNavigation';
 import AuctionActivityWrapper from '../AuctionActivityWrapper';
-// import AuctionTitleAndNavWrapper from '../AuctionTitleAndNavWrapper';
+import AuctionTitleAndNavWrapper from '../AuctionTitleAndNavWrapper';
 import AuctionActivityVrbTitle from '../AuctionActivityVrbTitle';
 // import AuctionActivityDateHeadline from '../AuctionActivityDateHeadline';
 import BidHistoryBtn from '../BidHistoryBtn';
 import config from '../../config';
 import { buildEtherscanAddressLink } from '../../utils/etherscan';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfoCircle } from '@fortawesome/free-solid-svg-icons';
 import VrbInfoCard from '../VrbInfoCard';
 import { useAppSelector } from '../../hooks';
 import BidHistoryModal from '../BidHistoryModal';
@@ -42,10 +42,10 @@ interface AuctionActivityProps {
 const AuctionActivity: React.FC<AuctionActivityProps> = (props: AuctionActivityProps) => {
   const {
     auction,
-    // isFirstAuction,
+    isFirstAuction,
     isLastAuction,
-    // onPrevAuctionClick,
-    // onNextAuctionClick,
+    onPrevAuctionClick,
+    onNextAuctionClick,
     displayGraphDepComps,
   } = props;
 
@@ -96,7 +96,7 @@ const AuctionActivity: React.FC<AuctionActivityProps> = (props: AuctionActivityP
       <AuctionActivityWrapper>
         <div className={classes.informationRow}>
           <Row className={classes.activityRow}>
-            {/* <AuctionTitleAndNavWrapper>
+            <AuctionTitleAndNavWrapper>
               {displayGraphDepComps && (
                 <AuctionNavigation
                   isFirstAuction={isFirstAuction}
@@ -105,8 +105,8 @@ const AuctionActivity: React.FC<AuctionActivityProps> = (props: AuctionActivityP
                   onPrevAuctionClick={onPrevAuctionClick}
                 />
               )}
-              <AuctionActivityDateHeadline startTime={auction.startTime} />
-            </AuctionTitleAndNavWrapper> */}
+              {/* <AuctionActivityDateHeadline startTime={auction.startTime} /> */}
+            </AuctionTitleAndNavWrapper>
             <Col lg={12}>
               <AuctionActivityVrbTitle isCool={isCool} vrbId={auction.vrbId} />
             </Col>

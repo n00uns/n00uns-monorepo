@@ -12,11 +12,11 @@ import { useDispatch } from 'react-redux';
 import { setOnDisplayAuctionVrbId } from '../../state/slices/onDisplayAuction';
 import vrbClasses from '../Vrb/Vrb.module.css';
 import Image from 'react-bootstrap/Image';
-import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow, Pagination } from "swiper";
-import "swiper/swiper.css";
-import "swiper/modules/effect-coverflow/effect-coverflow.min.css";
-import "swiper/modules/pagination/pagination.min.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Pagination } from 'swiper';
+import 'swiper/swiper.css';
+import 'swiper/modules/effect-coverflow/effect-coverflow.min.css';
+import 'swiper/modules/pagination/pagination.min.css';
 
 interface StandaloneVrbProps {
   vrbId: EthersBN;
@@ -46,9 +46,7 @@ export const getVrb = (vrbId: string | EthersBN, seed: IVrbSeed) => {
   };
 };
 
-export const StandaloneVrbImage: React.FC<StandaloneVrbProps> = (
-  props: StandaloneVrbProps,
-) => {
+export const StandaloneVrbImage: React.FC<StandaloneVrbProps> = (props: StandaloneVrbProps) => {
   const { vrbId } = props;
   const seed = useVrbSeed(vrbId);
   const vrb = seed && getVrb(vrbId, seed);
@@ -68,11 +66,7 @@ const StandaloneVrb: React.FC<StandaloneVrbProps> = (props: StandaloneVrbProps) 
   };
 
   return (
-    <Link
-      to={'/vrb/' + vrbId.toString()}
-      className={classes.clickableVrb}
-      onClick={onClickHandler}
-    >
+    <Link to={'/vrb/' + vrbId.toString()} className={classes.clickableVrb} onClick={onClickHandler}>
       <Vrb imgPath={vrb ? vrb.image : ''} alt={vrb ? vrb.description : 'Vrb'} />
     </Link>
   );
@@ -93,11 +87,7 @@ export const StandaloneVrbCircular: React.FC<StandaloneCircularVrbProps> = (
   if (!seed || !vrbId) return <Vrb imgPath="" alt="Vrb" />;
 
   return (
-    <Link
-      to={'/vrb/' + vrbId.toString()}
-      className={classes.clickableVrb}
-      onClick={onClickHandler}
-    >
+    <Link to={'/vrb/' + vrbId.toString()} className={classes.clickableVrb} onClick={onClickHandler}>
       <Vrb
         imgPath={vrb ? vrb.image : ''}
         alt={vrb ? vrb.description : 'Vrb'}
@@ -121,11 +111,7 @@ export const StandaloneVrbRoundedCorners: React.FC<StandaloneVrbProps> = (
   };
 
   return (
-    <Link
-      to={'/vrb/' + vrbId.toString()}
-      className={classes.clickableVrb}
-      onClick={onClickHandler}
-    >
+    <Link to={'/vrb/' + vrbId.toString()} className={classes.clickableVrb} onClick={onClickHandler}>
       <Vrb
         imgPath={vrb ? vrb.image : ''}
         alt={vrb ? vrb.description : 'Vrb'}
@@ -145,9 +131,9 @@ export const StandaloneVrbWithSeed: React.FC<StandaloneVrbWithSeedProps> = (
 
   //prev seed
   // const pastAuctions = useAppSelector(state => state.pastAuctions.pastAuctions);
-  const prevID = BigNumber.from(vrbId.toNumber() -1);
-  const prevSeed = useVrbSeed(prevID);
-  const prev: { image:string, description:string } = getVrb(prevID, prevSeed);
+  // const prevID = BigNumber.from(vrbId.toNumber() - 1);
+  // const prevSeed = useVrbSeed(prevID);
+  // const prev: { image: string; description: string } = getVrb(prevID, prevSeed);
   // console.log(prev);
 
   if (!seed || seedIsInvalid || !vrbId || !onLoadSeed) return <Vrb imgPath="" alt="Vrb" />;
@@ -159,68 +145,70 @@ export const StandaloneVrbWithSeed: React.FC<StandaloneVrbWithSeedProps> = (
   };
 
   const { image, description } = getVrb(vrbId, seed);
-console.log(image);
-// console.log(pastAuctions);
-  const slideData = [
-    {},
-    {},
-    {}
-  ]
-  
-  let slides = [
-    <SwiperSlide key={0} className={classes.swiperSlide}>
-      <Vrb imgPath={fomo} alt={description} />
-    </SwiperSlide>,
-        <SwiperSlide key={1} className={classes.swiperSlide}>
-        <Vrb imgPath={image} alt={description} />
-      </SwiperSlide>,
-      <SwiperSlide key={2} className={classes.swiperSlide}>
-        <Vrb imgPath={prev.image} alt={prev.description} />
-      </SwiperSlide>
-  ];
-  
-  let i = 3;
-  let slidesMain = slideData.map((team) => (
-    <SwiperSlide key={i++} className={classes.swiperSlide}>
-      <Vrb imgPath={image} alt={description} />
-    </SwiperSlide>
-  ));
+  // // console.log(image);
+  // // console.log(pastAuctions);
+  // const slideData = [{}, {}, {}];
 
-  slides.push(...slidesMain);
+  // let slides = [
+  //   <SwiperSlide key={0} className={classes.swiperSlide}>
+  //     <Vrb imgPath={fomo} alt={description} />
+  //   </SwiperSlide>,
+  //   <SwiperSlide key={1} className={classes.swiperSlide}>
+  //     <Vrb imgPath={image} alt={description} />
+  //   </SwiperSlide>,
+  //   <SwiperSlide key={2} className={classes.swiperSlide}>
+  //     <Vrb imgPath={prev.image} alt={prev.description} />
+  //   </SwiperSlide>,
+  // ];
 
-  const swiperEl = (
-    <Swiper
-      onSwiper={(swiper) => {swiper.changeLanguageDirection('rtl')}}
-      onSlideChange={(swiper) => {console.log(swiper)}}
-      initialSlide={1}
-      effect={"coverflow"}
-      grabCursor={true}
-      centeredSlides={true}
-      slidesPerView={"auto"}
-      coverflowEffect={{
-        rotate: 20,
-        stretch: 0,
-        depth: 250,
-        modifier: 1,
-        slideShadows: true,
-      }}
-      pagination={false}
-      modules={[EffectCoverflow, Pagination]}
-    >
-      {slides}
-    </Swiper>
-  );
+  // let i = 3;
+  // let slidesMain = slideData.map(slide => (
+  //   <SwiperSlide key={i++} className={classes.swiperSlide}>
+  //     <Vrb imgPath={image} alt={description} />
+  //   </SwiperSlide>
+  // ));
+
+  // slides.push(...slidesMain);
+
+  // const swiperEl = (
+  //   <Swiper
+  //     onSwiper={swiper => {
+  //       swiper.changeLanguageDirection('rtl');
+  //     }}
+  //     onSlideChange={swiper => {
+  //       console.log(swiper);
+  //       if (swiper.activeIndex > swiper.previousIndex) {
+  //         onPrevAuctionClick();
+  //       }
+  //     }}
+  //     initialSlide={1}
+  //     effect={'coverflow'}
+  //     grabCursor={true}
+  //     centeredSlides={true}
+  //     slidesPerView={'auto'}
+  //     coverflowEffect={{
+  //       rotate: 20,
+  //       stretch: 0,
+  //       depth: 250,
+  //       modifier: 1,
+  //       slideShadows: true,
+  //     }}
+  //     pagination={false}
+  //     modules={[EffectCoverflow, Pagination]}
+  //   >
+  //     {slides}
+  //   </Swiper>
+  // );
+
+  const vrb = <Vrb imgPath={image} alt={description} />;
 
   const vrbWithLink = (
-    <Link
-      to={'/vrb/' + vrbId.toString()}
-      className={classes.clickableVrb}
-      onClick={onClickHandler}
-    >
-      {swiperEl}
+    <Link to={'/vrb/' + vrbId.toString()} className={classes.clickableVrb} onClick={onClickHandler}>
+      {/* {swiperEl} */}
+      {vrb}
     </Link>
   );
-  return shouldLinkToProfile ? vrbWithLink : swiperEl;
+  return shouldLinkToProfile ? vrbWithLink : vrb;
 };
 
 export default StandaloneVrb;

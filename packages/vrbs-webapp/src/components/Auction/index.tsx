@@ -16,7 +16,7 @@ import {
   setPrevOnDisplayAuctionVrbId,
 } from '../../state/slices/onDisplayAuction';
 import { beige, grey } from '../../utils/vrbBgColors';
-// import pixel_border from '../../assets/pixel_border.svg';
+import pixel_border from '../../assets/pixel_border.svg';
 import bg from '../../assets/home/home-sec1.png';
 
 interface AuctionProps {
@@ -97,7 +97,7 @@ const Auction: React.FC<AuctionProps> = props => {
           </Col>
         </Row>
       </Container>
-      {/* <img src={pixel_border} className={classes.auctionBorder}alt="border" /> */}
+      <img src={pixel_border} className={classes.auctionBorder}alt="border" />
     </div>
   );
 };
