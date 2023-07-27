@@ -19,7 +19,7 @@ const TightStackedCircleVrb: React.FC<TightStackedCircleVrbProps> = props => {
   }
 
   const vrbData = getVrb(BigNumber.from(vrbId), seed);
-  const image = vrbData.image;
+  const image = (vrbData.fullImage);
 
   return (
     <g key={index}>

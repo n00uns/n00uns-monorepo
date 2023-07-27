@@ -12,6 +12,5 @@ export interface EncodedImage {
 }
 
 export interface VrbData {
-  parts: EncodedImage[];
-  background: string;
+  fullImage: string;
 }

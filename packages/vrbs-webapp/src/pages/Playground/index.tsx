@@ -101,8 +101,8 @@ const Playground: React.FC = () => {
     (amount: number = 1) => {
       for (let i = 0; i < amount; i++) {
         const seed = { ...getRandomVrbSeed(), ...modSeed };
-        const { parts, background } = getVrbData(seed);
-        const svg = buildSVG(parts, encoder.data.palette, background);
+        const { fullImage } = getVrbData(i.toString());
+        const svg = fullImage;
         setVrbSvgs(prev => {
           return prev ? [svg, ...prev] : [svg];
         });
