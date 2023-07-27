@@ -37,6 +37,7 @@ const VrbIntroSection = () => {
           ></iframe>
         </Col>
       </Section>
+
       {/* <Section fullWidth={false} className={classes.iosSection}>
         <Col lg={6} className={classes.iosImgContainer}>
           <img src={vrbsIosGif} className={classes.iosImg} alt="vrbs ios" />

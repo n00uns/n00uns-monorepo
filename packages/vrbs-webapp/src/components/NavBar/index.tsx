@@ -93,10 +93,10 @@ const NavBar = () => {
             aria-controls="basic-navbar-nav"
             onClick={() => setIsNavExpanded(!isNavExpanded)}
           />
-          <Navbar.Collapse className="justify-content-end">
+          <Navbar.Collapse className={classes.linksWrapper}>
             <Nav.Link as={Link} to="/vote" className={classes.vrbsNavLink} onClick={closeNav}>
               <NavBarButton
-                buttonText={<Trans>DAO</Trans>}
+                buttonText={<Trans>Voting</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faUsers} />}
                 buttonStyle={nonWalletButtonStyle}
               />
@@ -109,7 +109,7 @@ const NavBar = () => {
               onClick={closeNav}
             >
               <NavBarButton
-                buttonText={<Trans>Docs</Trans>}
+                buttonText={<Trans>Our Manifesto</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faBookOpen} />}
                 buttonStyle={nonWalletButtonStyle}
               />
