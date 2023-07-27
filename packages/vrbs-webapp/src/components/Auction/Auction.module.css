@@ -26,6 +26,7 @@
   position:absolute;
   transform: translateY(-131px);
   opacity: 20%;
+  z-index: 0;
 }
 
 @media (max-width: 991.98px) {
