@@ -12,8 +12,8 @@ import {
 import classes from './Playground.module.css';
 import React, { ChangeEvent, ReactNode, useEffect, useRef, useState } from 'react';
 import Link from '../../components/Link';
-import { ImageData, getVrbData, getRandomVrbSeed } from '@vrbs/assets';
-import { buildSVG, EncodedImage, PNGCollectionEncoder } from '@vrbs/sdk';
+import { ImageData, getVrbData } from '@vrbs/assets';
+import { EncodedImage, PNGCollectionEncoder } from '@vrbs/sdk';
 import InfoIcon from '../../assets/icons/Info.svg';
 import Vrb from '../../components/Vrb';
 import VrbModal from './VrbModal';
@@ -100,7 +100,7 @@ const Playground: React.FC = () => {
   const generateVrbSvg = React.useCallback(
     (amount: number = 1) => {
       for (let i = 0; i < amount; i++) {
-        const seed = { ...getRandomVrbSeed(), ...modSeed };
+        // const seed = { ...getRandomVrbSeed(), ...modSeed };
         const { fullImage } = getVrbData(i.toString());
         const svg = fullImage;
         setVrbSvgs(prev => {
