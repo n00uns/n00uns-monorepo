@@ -31,8 +31,12 @@ msgid "... and {0} more"
 msgstr "...そしてさらに3つ"
 
 #: src/components/Documentation/index.tsx
-msgid "100% of Vrb auction proceeds are trustlessly sent to the treasury."
-msgstr "Vrbオークションの売上は、第三者の介入無しで 100％トレジャリーに送られる仕組みになっています。"
+#~ msgid "100% of Vrb auction proceeds are trustlessly sent to the treasury."
+#~ msgstr "Vrbオークションの売上は、第三者の介入無しで 100％トレジャリーに送られる仕組みになっています。"
+
+#: src/components/Documentation/index.tsx
+msgid "100% of Vrbs auction proceeds are trustlessly sent to the treasury, 80% for DAO allocation, 20% for holder rewards and DAO expenses voted on by holders."
+msgstr ""
 
 #: src/pages/Founders/index.tsx
 msgid "3.5 artists, 6.5 technologists"
@@ -76,8 +80,8 @@ msgstr "<2>{proposedAtTransactionHash}</2> <1>{proposer}</1> <0>が提案した�
 msgid "<0>Supported Action Types:</0><1/><2>• Transfer Funds: </2>Send a fixed amount of ETH or USDC.<3/><4>• Function Call: </4>Call a contract function."
 msgstr ""
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProfileEvent/eventData/ProposalVoteHeadline/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Absent for"
 msgstr "不参加"
 
@@ -99,9 +103,9 @@ msgstr "棄権しました。"
 msgid "Accessory"
 msgstr "付属品"
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Active"
 msgstr "実行されました"
 
@@ -170,33 +174,53 @@ msgstr "イーサリアムアドレス"
 msgid "Against"
 msgstr "反対"
 
-#: src/components/FounderVrbContent/index.tsx
-msgid "All Vrb auction proceeds are sent to the"
-msgstr "すべてのVrbオークションの収益は、"
-
-#: src/pages/Vrbs/index.tsx
-msgid "All Vrb auction proceeds are sent to the Vrbs DAO. For this reason, we, the project's founders (‘Vrbs’) have chosen to compensate ourselves with Vrbs. Every 10th vrb for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Vrbs."
-msgstr "Vrbオークションの収益は全て Vrbs DAOに送られます。その為、我々、プロジェクトの創設者 (Vrbs) はVrbsで自らを補償することに決めました。 プロジェクトの最初の5年間の間は、毎回10体目のVrbがマルチシグ(5/10) に送られた後、個々のナウンダーズに与えられ、配布されます。"
-
-#: src/components/Documentation/index.tsx
-msgid "All Vrbs are members of Vrbs DAO."
-msgstr "Vrbsは全員Vrbs DAOの会員です。"
-
 #: src/pages/CreateProposal/index.tsx
 #~ msgid "All Proposals"
 #~ msgstr "全ての提案"
 
+#: src/components/Documentation/index.tsx
+msgid "All VRBs are members of an exclusive cohort known as the Vrbs DAO, which consists of top-tier cross chain Artists, Creators, Venture Capitalists, Whales, Founders, and Innovators."
+msgstr ""
+
+#: src/components/FounderVrbContent/index.tsx
+msgid "All Vrb auction proceeds are sent to the"
+msgstr "すべてのVrbオークションの収益は、"
+
+#: src/pages/Founders/index.tsx
+msgid "All Vrb auction proceeds are sent to the Vrbs DAO. For this reason, we, the project's founders (‘Vrbs’) have chosen to compensate ourselves with Vrbs. Every 10th vrb for the first 5 years of the project will be sent to our multisig (5/10), where it will be vested and distributed to individual Vrbs."
+msgstr "Vrbオークションの収益は全て Vrbs DAOに送られます。その為、我々、プロジェクトの創設者 (Vrbs) はVrbsで自らを補償することに決めました。 プロジェクトの最初の5年間の間は、毎回10体目のVrbがマルチシグ(5/10) に送られた後、個々のナウンダーズに与えられ、配布されます。"
+
+#: src/components/Documentation/index.tsx
+#~ msgid "All Vrbs are members of Vrbs DAO."
+#~ msgstr "Vrbsは全員Vrbs DAOの会員です。"
+
 #: src/components/DelegationCandidateInfo/index.tsx
 msgid "Already has"
 msgstr "すでに持っています"
+
+#: src/components/Documentation/index.tsx
+msgid "Architects equal the developers of the DAO framework."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Architects receive rewards in the form of Vrbs distributed on day 0, 10% of the supply of each chain specific DAO when it launches. This allows the Architects to experience the same level of dilution as every other holder, in addition to giving them the votes to help curate the DAO in it’s infancy, until critical consensus mass is reached."
+msgstr ""
 
 #: src/components/ProposalActionsModal/steps/FunctionCallReviewStep/index.tsx
 msgid "Arguments"
 msgstr "引数"
 
 #: src/components/Documentation/index.tsx
-msgid "Artwork is generative and stored directly on-chain (not IPFS)."
-msgstr "生成されたアートワークは直接オンチェーンに保存されます(IPFSではありません)。"
+#~ msgid "Artwork is generative and stored directly on-chain (not IPFS)."
+#~ msgstr "生成されたアートワークは直接オンチェーンに保存されます(IPFSではありません)。"
+
+#: src/components/Documentation/index.tsx
+msgid "Artwork is hand-crafted 1/1s, stored directly on-chain (not IPFS)."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "As the treasury grows, so do the proposals for funding, made by the members of the DAO, who aspire to proliferate VRBish ideals in the next generation tools, companies, events, and projects they build."
+msgstr ""
 
 #: src/components/AuctionTimer/index.tsx
 #: src/components/AuctionTimer/index.tsx
@@ -262,18 +286,26 @@ msgstr "入札はここに表示されます"
 msgid "Body"
 msgstr "体"
 
-#: src/components/VrbHoverCard/index.tsx
 #: src/components/InfoRowBirthday/index.tsx
+#: src/components/VrbHoverCard/index.tsx
 msgid "Born"
 msgstr "誕生"
+
+#: src/components/Documentation/index.tsx
+msgid "Both y00t nouns and VRBs are co-equal but serve different and distinct roles in the DAO. It is up to each individual to decide what path they take:"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Builders equal the execution layer of the DAO responsible for everything Vrbish (allocation of funds, onboarding new members, social media)."
+msgstr ""
 
 #: src/pages/Vote/index.tsx
 msgid "Cancel"
 msgstr ""
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Canceled"
 msgstr "キャンセルしました"
 
@@ -313,12 +345,16 @@ msgid "Compound Governance"
 msgstr "コンパウンドガバナンス"
 
 #: src/components/NavWallet/WalletConnectButton/index.tsx
-msgid "Connect"
-msgstr "接続する"
+#~ msgid "Connect"
+#~ msgstr "接続する"
 
 #: src/components/ProposalHeader/index.tsx
 msgid "Connect a wallet to vote."
 msgstr "投票するためにウォレットを接続してください。"
+
+#: src/components/NavWallet/WalletConnectButton/index.tsx
+msgid "Connect wallet"
+msgstr ""
 
 #: src/components/Proposals/index.tsx
 msgid "Connect wallet to make a proposal."
@@ -329,8 +365,8 @@ msgid "Connect your wallet"
 msgstr "ウォレットに接続してください"
 
 #: src/components/Documentation/index.tsx
-msgid "Consequently, the Vrbs Foundation anticipates being the steward of the veto power until Vrbs DAO is ready to implement an alternative, and therefore wishes to clarify the conditions under which it would exercise this power."
-msgstr ""
+#~ msgid "Consequently, the Vrbs Foundation anticipates being the steward of the veto power until Vrbs DAO is ready to implement an alternative, and therefore wishes to clarify the conditions under which it would exercise this power."
+#~ msgstr ""
 
 #: src/components/CreateProposalButton/index.tsx
 #: src/pages/CreateProposal/index.tsx
@@ -358,18 +394,22 @@ msgid "Current bid"
 msgstr "現在の入札額"
 
 #: src/components/NavBar/index.tsx
-msgid "DAO"
-msgstr "DAO"
+#~ msgid "DAO"
+#~ msgstr "DAO"
 
 #: src/components/Documentation/index.tsx
 msgid "Daily Auctions"
 msgstr "デイリーオークション"
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Defeated"
 msgstr "却下"
+
+#: src/components/Documentation/index.tsx
+msgid "Degods"
+msgstr ""
 
 #: src/components/Proposals/index.tsx
 #: src/components/Proposals/index.tsx
@@ -420,12 +460,12 @@ msgid "Discourse"
 msgstr "Discourse"
 
 #: src/components/NavBar/index.tsx
-msgid "Docs"
-msgstr "ドキュメント"
+#~ msgid "Docs"
+#~ msgstr "ドキュメント"
 
 #: src/components/VrbIntroSection/index.tsx
-msgid "Download the Free iOS App"
-msgstr ""
+#~ msgid "Download the Free iOS App"
+#~ msgstr ""
 
 #: src/components/DynamicQuorumInfoModal/index.tsx
 #~ msgid "Dynamic Quorum"
@@ -485,22 +525,22 @@ msgid "Etherscan"
 msgstr "Etherscan"
 
 #: src/components/VrbIntroSection/index.tsx
-msgid "Every new Vrb pushed right to your pocket! View the current auction, remix your own Vrb, and explore the entire history directly from the app."
-msgstr ""
+#~ msgid "Every new Vrb pushed right to your pocket! View the current auction, remix your own Vrb, and explore the entire history directly from the app."
+#~ msgstr ""
 
 #: src/pages/Vote/index.tsx
 msgid "Execute"
 msgstr "実行する"
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Executed"
 msgstr "実行しました"
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Expired"
 msgstr "期限切れです"
 
@@ -530,6 +570,10 @@ msgstr "Vrb の活動履歴の取得に失敗しました。"
 #: src/components/VrbInfoRowHolder/index.tsx
 msgid "Failed to fetch Vrb info"
 msgstr "Vrbに関する情報の取得に失敗しました"
+
+#: src/components/Documentation/index.tsx
+msgid "First Principals: Action"
+msgstr ""
 
 #: src/components/VoteCard/index.tsx
 #: src/components/VoteModal/index.tsx
@@ -593,8 +637,8 @@ msgid "Held by"
 msgstr "主催者"
 
 #: src/components/AuctionActivity/index.tsx
-msgid "Help mint the next Vrb"
-msgstr "次にミントされるVrbの投票をしてください"
+#~ msgid "Help mint the next Vrb"
+#~ msgstr "次にミントされるVrbの投票をしてください"
 
 #: src/components/ProfileEvent/event/DesktopTransferEvent/index.tsx
 msgid "Holder changed from <0><1/></0> to <2><3/></2>"
@@ -607,6 +651,18 @@ msgstr ""
 #: src/components/Documentation/index.tsx
 #~ msgid "In addition to the precautions taken by Compound Governance, Vrbs have given themselves a special veto right to ensure that no malicious proposals can be passed while the Vrb supply is low. This veto right will only be used if an obviously harmful governance proposal has been passed, and is intended as a last resort."
 #~ msgstr "コンパウンドガバナンスによる予防措置に加えて、Vrbの供給量が少ない間に悪意のある議案が通らないように、Vrbsは特別な拒否権を保有しています。この拒否権は、明らかに有害なガバナンスの提案が可決された場合にのみ行使され、最後の手段として使用されます。"
+
+#: src/components/Documentation/index.tsx
+msgid "In addition to the security and precautions taken by Nouns DAO, Vrbs Developers, and Compound Governance, the Architects have given themselves a special veto right to ensure that no malicious proposals can be passed while the Vrbs supply is low. This veto right will only be used if an obviously harmful governance proposal has been passed, and is intended as a last resort."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "In short, as VRBs become a cultural tour de force, their value will increase and the treasury will grow. As the treasury grows, more ideas will be funded, leading to more projects created and more visions realized. In this way, the jovial characters boasting square-shaped glasses can be the catalyst of real-world changes and good in the world."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Injecting the spirit of VRBs into Nouns ecosystem creates a powerful identity and further strengthens the need for action in this current environment. We are operating under a model of rapid decentralization, meaning, that this DAO framework was developed by a small group of Architects who laid the foundation for the DAO. Once the foundation was developed, a larger group of critically important entrepreneurs, investors, thinkers, and artists, known as the builders (council) further developed the idiosyncratic parts of the DAO."
+msgstr ""
 
 #: src/components/Bid/index.tsx
 msgid "Insufficient bid amount 🤏"
@@ -625,8 +681,8 @@ msgid "Learn more"
 msgstr "詳細はこちら"
 
 #: src/components/Documentation/index.tsx
-msgid "Learn more below, or start creating Vrbs off-chain using the {playgroundLink}."
-msgstr "詳しくは以下をご覧ください。また、{playgroundLink} を使いVrbsのオフチェーンの作成をすることもできます。"
+#~ msgid "Learn more below, or start creating Vrbs off-chain using the {playgroundLink}."
+#~ msgstr "詳しくは以下をご覧ください。また、{playgroundLink} を使いVrbsのオフチェーンの作成をすることもできます。"
 
 #: src/components/VrbInfoRowHolder/index.tsx
 msgid "Loading..."
@@ -643,96 +699,6 @@ msgstr ""
 #: src/components/DynamicQuorumInfoModal/index.tsx
 msgid "More details on how the dynamic threshold works can be found <0>here</0>."
 msgstr ""
-
-#: src/pages/Governance/index.tsx
-msgid "Vrb"
-msgstr "Vrb"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrb Seeder Contract"
-msgstr "Vrbシーダー契約"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrb Traits"
-msgstr "Vrbsの特徴"
-
-#: src/components/CurrentDelegatePannel/index.tsx
-msgid "Vrb votes are not transferable, but are <0>delegatable</0>, which means you can assign your vote to someone else as long as you own your Vrb."
-msgstr "Vrbの票は譲渡できませんが (Vrbの売却にはそれに応じて票も移ります)、委任することができます。"
-
-#: src/components/AuctionActivityVrbTitle/index.tsx
-msgid "Vrb {0}"
-msgstr "Vrb {0}"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrbder distributions don't interfere with the cadence of 24 hour auctions. Vrbs are sent directly to the Vrbder's Multisig, and auctions continue on schedule with the next available Vrb ID."
-msgstr "Vrbder配布により24時間オークションの頻度に影響が及ぶことはありません。 VrbsはVrbderのマルチシグに直接送られ、オークションは次の有効なVrbs IDによって予定通り継続されます。"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrbder's Reward"
-msgstr "Vrbderへの報酬"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrbs receive rewards in the form of Vrbs (10% of supply for first 5 years)."
-msgstr "Vrbderには、Vrbsという形で報酬が与えられます (最初の5年間は供給量の10％)。"
-
-#: src/components/Documentation/index.tsx
-#~ msgid "Vrbs will proveably revoke this veto right when they deem it safe to do so. This decision will be based on a healthy Vrb distribution and a community that is engaged in the governance process."
-#~ msgstr "Vrbderは、安全であると判断した場合、この拒否権を無効にすることが出来ます。この決定は、健全なVrbの分布と、ガバナンスプロセスに関与しているコミュニティに基づいて行われます。"
-
-#: src/pages/Vrbs/index.tsx
-msgid "Vrbs' Reward"
-msgstr "Vrbderへの報酬"
-
-#: src/pages/Governance/index.tsx
-msgid "Vrbs"
-msgstr "Vrbs"
-
-#: src/components/NavBar/index.tsx
-msgid "Vrbs & Traits"
-msgstr ""
-
-#: src/components/VrbInfoRowHolder/index.tsx
-msgid "Vrbs Auction House"
-msgstr "Vrbsオークションハウス"
-
-#: src/components/Documentation/index.tsx
-#: src/components/FounderVrbContent/index.tsx
-#: src/pages/Governance/index.tsx
-msgid "Vrbs DAO"
-msgstr "Vrbs DAO"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrbs DAO uses a fork of {compoundGovLink}."
-msgstr "Vrbs DAOは {compoundGovLink} のフォークを使用しています。"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrbs DAO utilizes a fork of {compoundGovLink} and is the main governing body of the Vrbs ecosystem. The Vrbs DAO treasury receives 100% of ETH proceeds from daily Vrb auctions. Each Vrb is an irrevocable member of Vrbs DAO and entitled to one vote in all governance matters. Vrb votes are non-transferable (if you sell your Vrb the vote goes with it) but delegatable, which means you can assign your vote to someone else as long as you own your Vrb."
-msgstr "Vrbs DAOは {compoundGovLink} のフォークを利用しており、Vrbsエコシステムの主要な統治機関です。毎日起こるVrbオークションから得られるETHの収益の100％はVrbs DAO トレジャリーにて受け取られています。各VrbはVrbs DAOの変更不可能なメンバーであり、すべてのガバナンスの問題で1票の投票権を有します。Vrbの票は譲渡できませんが (Vrbの売却にはそれに応じて票も移ります)、委任することができます。"
-
-#: src/pages/Playground/index.tsx
-msgid "Vrbs Protocol"
-msgstr "Vrbsプロトコル"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrbs are an experimental attempt to improve the formation of on-chain avatar communities. While projects such as {cryptopunksLink} have attempted to bootstrap digital community and identity, Vrbs attempt to bootstrap identity, community, governance, and a treasury that can be used by the community."
-msgstr "Vrbs は、オンチェーン・アバターコミュニティの形成を改善するための実験的な試みです。{cryptopunksLink} などのプロジェクトがデジタルコミュニティとアイデンティティの構築を試みているのに対し、Vrbsはアイデンティティ、コミュニティ、ガバナンス、そしてコミュニティが使用できるトレジャリーを構築することを試みています。"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrbs are generated randomly based Ethereum block hashes. There are no 'if' statements or other rules governing Vrb trait scarcity, which makes all Vrbs equally rare. As of this writing, Vrbs are made up of:"
-msgstr "Vrbsは、イーサリアムのブロックハッシュに基づいてランダムに生成されます。Vrbの特徴の希少性を管理する「if」ステートメントやその他のルールは存在しないため、すべてのVrbが等しく希少となります。現時点では、Vrbsは以下のもので構成されています："
-
-#: src/components/Documentation/index.tsx
-msgid "Vrbs are stored directly on Ethereum and do not utilize pointers to other networks such as IPFS. This is possible because Vrb parts are compressed and stored on-chain using a custom run-length encoding (RLE), which is a form of lossless compression."
-msgstr "VrbはEthereum上に直接保存されるため、IPFSのような他のネットワークへのポインタを利用することはありません。これは、Vrbのパーツが可逆圧縮の一種であるカスタムのランレングス圧縮 (RLE) を使用してオンチェーンで圧縮・保存されていることから実現したものです。"
-
-#: src/components/Documentation/index.tsx
-msgid "Vrbs artwork is in the {publicDomainLink}."
-msgstr "Vrbsのアートワークは {publicDomainLink} にあります。"
-
-#: src/pages/Governance/index.tsx
-msgid "Vrbs govern <0>Vrbs DAO</0>. Vrbs can vote on proposals or delegate their vote to a third party. A minimum of <1>{vrbsRequired} {0}</1> is required to submit proposals."
-msgstr "Vrbsが統治する <0>Vrbs DAO</0> 。Vrbsは提案に対して投票したり、第三者に投票を委任することができますが、提案の提出には最低でも <1>{vrbsRequired} {0}</1> 以上が必要です。"
 
 #: src/components/ProposalTransactionFormModal/index.tsx
 #~ msgid "Next"
@@ -760,6 +726,10 @@ msgstr "なし"
 msgid "Note"
 msgstr ""
 
+#: src/components/Documentation/index.tsx
+msgid "Nouns.wtf"
+msgstr ""
+
 #: src/components/DelegationCandidateInfo/index.tsx
 msgid "Now has"
 msgstr "今持っています"
@@ -769,19 +739,35 @@ msgid "ONE NOUN,"
 msgstr "1つのNOUNを"
 
 #: src/components/Documentation/index.tsx
-msgid "On-Chain Artwork"
-msgstr "オンチェーンアートワーク"
+#~ msgid "On-Chain Artwork"
+#~ msgstr "オンチェーンアートワーク"
 
 #: src/components/Documentation/index.tsx
-msgid "One Vrb is equal to one vote."
-msgstr "1体のVrbにつき、1票の投票件を得ることができます。"
+#~ msgid "One Vrb is equal to one vote."
+#~ msgstr "1体のVrbにつき、1票の投票件を得ることができます。"
 
 #: src/components/Documentation/index.tsx
-msgid "One Vrb is trustlessly auctioned every 24 hours, forever."
-msgstr "Vrbsは24時間ごとに1体ずつ、第三者の介入無しでオークションに出され続けます。"
+msgid "One Vrb is equal to the write to make proposals and two votes."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "One Vrb is trustlessly auctioned every 24 hours, forever."
+#~ msgstr "Vrbsは24時間ごとに1体ずつ、第三者の介入無しでオークションに出され続けます。"
+
+#: src/components/Documentation/index.tsx
+msgid "One Vrb is trustlessly auctioned every 24 hours."
+msgstr ""
 
 #: src/components/VrbIntroSection/index.tsx
-msgid "One Vrb, Every Day, Forever."
+#~ msgid "One Vrb, Every Day, Forever."
+#~ msgstr ""
+
+#: src/components/VrbIntroSection/index.tsx
+msgid "One Vrb, One Vote, One Action Filled Movement."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "One y00t nouns is equal to one vote."
 msgstr ""
 
 #: src/pages/Playground/index.tsx
@@ -792,9 +778,25 @@ msgstr "32x32 PNG画像のみ受け付けています"
 msgid "Only Vrbs you owned or were delegated to you before {0} are eligible to vote."
 msgstr "投票できるのは {0} 以前に所有していた、または委任されたVrbsのみです。"
 
-#: src/components/VrbProfileVoteRow/index.tsx
+#: src/components/Documentation/index.tsx
+msgid "Ordinal Maxi Business"
+msgstr ""
+
+#: src/components/NavBar/index.tsx
+msgid "Our Manifesto"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Owning a VRB<0><1>Voting: Instant voting rights over treasury allocations from the DAO.</1><2>Proposals: Instant proposal rights in the DAO, allowing one to get their idea, project or company funded by the VRBs.</2><3>Multi-Chain: Each VRB will have the ability to transpose their NFT to future VRBs DAO (BTC, SOL, etc).</3><4>Gamification: Each VRB will have the ability of getting rewards from the treasury via participation in the governance.</4><5>Art: Each VRB is a 1/1 handcrafted piece by the marque names in the Solana and Ethereum ecosystems artists from marculino.png to Pencilx to DeGen Poet and many more.</5></0>"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Owning a y00t Noun<0><1>Voting and Proposal via delegation rights post y00ts season II by the DeGods.</1><2>Access to VRBs community chats.</2><3>Stacking Points, IRL y00t events, and access to De the discord server.</3><4>Social clout and following from the main y00ts account.</4><5>Participation in the #1 collection on Polygon.</5><6>Brand Partnerships from the y00ts team.</6></0>"
+msgstr ""
+
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Pending"
 msgstr "保留中"
 
@@ -804,8 +806,6 @@ msgstr "保留中"
 msgid "Place bid"
 msgstr "入札をする"
 
-#: src/components/Documentation/index.tsx
-#: src/components/NavBar/index.tsx
 #: src/pages/Playground/index.tsx
 msgid "Playground"
 msgstr "遊び場"
@@ -871,9 +871,9 @@ msgstr "提案中のトランザクション"
 msgid "Queue"
 msgstr "キュー"
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Queued"
 msgstr "キューに入りました"
 
@@ -966,9 +966,9 @@ msgstr "投票を提出"
 msgid "Submit vote"
 msgstr "投票を提出"
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Succeeded"
 msgstr "成功しました"
 
@@ -1008,27 +1008,7 @@ msgid "Thank you for voting."
 msgstr "投票ありがとうございます。"
 
 #: src/components/Documentation/index.tsx
-msgid "The Vrb Seeder contract is used to determine Vrb traits during the minting process. The seeder contract can be replaced to allow for future trait generation algorithm upgrades. Additionally, it can be locked by the Vrbs DAO to prevent any future updates. Currently, Vrb traits are determined using pseudo-random number generation:"
-msgstr "Vrbシーダー契約は、ミントのプロセスでVrbsの特徴を決定するために使用されます。シーダー契約は、今後の特徴生成アルゴリズムのアップグレードを可能にするために変更することができ、さらに、今後のアップデートを防ぐためにVrbs DAOによってロックすることも可能です。現在、Vrbsの特徴は擬似乱数生成を用い決められています。"
-
-#: src/pages/Vrbs/index.tsx
-msgid "The Vrbs"
-msgstr "Vrbs"
-
-#: src/pages/Vrbs/index.tsx
-msgid "The Vrbs reward is intended as compensation for our pre and post-launch contributions to the project, and to help us participate meaningfully in governance as the project matures. Since there are 10 Vrbs, after 5 years each Vrbder could receive up to 1% of the Vrb supply."
-msgstr "Vrbsの報酬は、プロジェクト開始前と開始後の貢献に対する対価として提供されるほか、プロジェクトが成熟するにつれ、ガバナンスに有意義に参加できるよう支援することも目的としています。Vrbsは10人なので、5年後には各ナウンダーは最大でVrbの供給量の1%を受け取ることができます。"
-
-#: src/components/Documentation/index.tsx
-msgid "The Vrbs Auction Contract will act as a self-sufficient Vrb generation and distribution mechanism, auctioning one Vrb every 24 hours, forever. 100% of auction proceeds (ETH) are automatically deposited in the Vrbs DAO treasury, where they are governed by Vrb owners."
-msgstr "Vrbsオークション契約は、Vrb生成・分配の自律的なメカニズムとして機能するため、24時間ごとに1体のVrbを永遠にオークションにかけ続けます。オークションの収益 (ETH) は100%自動的にVrbの所有者によって管理されている、Vrbs DAO のトレジャリーに預けられます。"
-
-#: src/components/Documentation/index.tsx
-msgid "The Vrbs Foundation considers the veto an emergency power that should not be exercised in the normal course of business. The Vrbs Foundation will veto proposals that introduce non-trivial legal or existential risks to the Vrbs DAO or the Vrbs Foundation, including (but not necessarily limited to) proposals that:"
-msgstr ""
-
-#: src/components/Documentation/index.tsx
-msgid "The Vrbs community has undertaken a preliminary exploration of proposal veto alternatives (‘rage quit’ etc.), but it is now clear that this is a difficult problem that will require significantly more research, development and testing before a satisfactory solution can be implemented."
+msgid "The Architects consider the veto an emergency power that should not be exercised in the normal course of business. Architects will veto proposals that introduce non-trivial legal or existential risks to the DAO, including (but not necessarily limited to) proposals that:"
 msgstr ""
 
 #: src/components/DynamicQuorumInfoModal/index.tsx
@@ -1052,15 +1032,59 @@ msgid "The Threshold (minimum number of For votes required to pass a proposal) i
 msgstr ""
 
 #: src/components/Documentation/index.tsx
-msgid "The compressed parts are efficiently converted into a single base64 encoded SVG image on-chain. To accomplish this, each part is decoded into an intermediate format before being converted into a series of SVG rects using batched, on-chain string concatenation. Once the entire SVG has been generated, it is base64 encoded."
-msgstr "圧縮されたパーツは、オンチェインで効率よく1つのbase64エンコードされたSVG画像に変換されます。そのために、各パーツは中間フォーマットにデコードされた後、オンチェーンでの文字列連結により一連のSVG rectsに変換されます。SVG全体が生成されると、それはbase64でエンコードされます。"
+msgid "The VRBs DAO`s virtuous cycle describes the cycle by which the incentivizing of doing good leads to a greater collective good (which is compounded) through a constant cycle of improvement."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "The Vrb Seeder contract is used to determine Vrb traits during the minting process. The seeder contract can be replaced to allow for future trait generation algorithm upgrades. Additionally, it can be locked by the Vrbs DAO to prevent any future updates. Currently, Vrb traits are determined using pseudo-random number generation:"
+#~ msgstr "Vrbシーダー契約は、ミントのプロセスでVrbsの特徴を決定するために使用されます。シーダー契約は、今後の特徴生成アルゴリズムのアップグレードを可能にするために変更することができ、さらに、今後のアップデートを防ぐためにVrbs DAOによってロックすることも可能です。現在、Vrbsの特徴は擬似乱数生成を用い決められています。"
+
+#: src/pages/Founders/index.tsx
+msgid "The Vrbs"
+msgstr "Vrbs"
+
+#: src/components/Documentation/index.tsx
+#~ msgid "The Vrbs Auction Contract will act as a self-sufficient Vrb generation and distribution mechanism, auctioning one Vrb every 24 hours, forever. 100% of auction proceeds (ETH) are automatically deposited in the Vrbs DAO treasury, where they are governed by Vrb owners."
+#~ msgstr "Vrbsオークション契約は、Vrb生成・分配の自律的なメカニズムとして機能するため、24時間ごとに1体のVrbを永遠にオークションにかけ続けます。オークションの収益 (ETH) は100%自動的にVrbの所有者によって管理されている、Vrbs DAO のトレジャリーに預けられます。"
+
+#: src/components/Documentation/index.tsx
+msgid "The Vrbs Auction Contract will live in the public domain for fork-ability, and act as a self-sufficient Vrb generation and distribution mechanism, auctioning one Vrb every 24 hours, forever. 100% of auction proceeds (ETH) are automatically deposited in the Vrbs DAO treasury, 80% to a decentralized multisig for allocation to DAO proposals, 20% to a decentralized multisig for allocation to DAO rewards (Vrb holders) and expenses. Both wallets will only allocate funds when approved by the collective body of Vrbs owners."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "The Vrbs Foundation considers the veto an emergency power that should not be exercised in the normal course of business. The Vrbs Foundation will veto proposals that introduce non-trivial legal or existential risks to the Vrbs DAO or the Vrbs Foundation, including (but not necessarily limited to) proposals that:"
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "The Vrbs are attempting to pioneer a new standard of, active communities, robust governance, art provenance, and a treasury that can be used by the members for the common good."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "The Vrbs community has undertaken a preliminary exploration of proposal veto alternatives (‘rage quit’ etc.), but it is now clear that this is a difficult problem that will require significantly more research, development and testing before a satisfactory solution can be implemented."
+msgstr ""
+
+#: src/pages/Founders/index.tsx
+msgid "The Vrbs reward is intended as compensation for our pre and post-launch contributions to the project, and to help us participate meaningfully in governance as the project matures. Since there are 10 Vrbs, after 5 years each Vrbder could receive up to 1% of the Vrb supply."
+msgstr "Vrbsの報酬は、プロジェクト開始前と開始後の貢献に対する対価として提供されるほか、プロジェクトが成熟するにつれ、ガバナンスに有意義に参加できるよう支援することも目的としています。Vrbsは10人なので、5年後には各ナウンダーは最大でVrbの供給量の1%を受け取ることができます。"
+
+#: src/components/Documentation/index.tsx
+#~ msgid "The compressed parts are efficiently converted into a single base64 encoded SVG image on-chain. To accomplish this, each part is decoded into an intermediate format before being converted into a series of SVG rects using batched, on-chain string concatenation. Once the entire SVG has been generated, it is base64 encoded."
+#~ msgstr "圧縮されたパーツは、オンチェインで効率よく1つのbase64エンコードされたSVG画像に変換されます。そのために、各パーツは中間フォーマットにデコードされた後、オンチェーンでの文字列連結により一連のSVG rectsに変換されます。SVG全体が生成されると、それはbase64でエンコードされます。"
+
+#: src/components/Documentation/index.tsx
+msgid "The cute but savage PFPs pay homage to the OG nouns but in a unique y00ts style."
+msgstr ""
 
 #: src/pages/Playground/index.tsx
 msgid "The playground was built using the {vrbsProtocolLink}. Vrb's traits are determined by the Vrb Seed. The seed was generated using {vrbsAssetsLink} and rendered using the {vrbsSDKLink}."
 msgstr "遊び場は{vrbsProtocolLink} を使用して作られており、Vrbの特徴は、Vrbシードによって決まります。{vrbsAssetsLink} でシードを生成し、{vrbsSDKLink} でレンダリングされています。"
 
 #: src/components/Documentation/index.tsx
-msgid "The proposal veto right was initially envisioned as a temporary solution to the problem of ‘51% attacks’ on the Vrbs DAO treasury. While Vrbs initially believed that a healthy distribution of Vrbs would be sufficient protection for the DAO, a more complete understanding of the incentives and risks has led to general consensus within the Vrbs, the Vrbs Foundation, and the wider community that a more robust game-theoretic solution should be implemented before the right is removed."
+#~ msgid "The proposal veto right was initially envisioned as a temporary solution to the problem of ‘51% attacks’ on the Vrbs DAO treasury. While Vrbs initially believed that a healthy distribution of Vrbs would be sufficient protection for the DAO, a more complete understanding of the incentives and risks has led to general consensus within the Vrbs, the Vrbs Foundation, and the wider community that a more robust game-theoretic solution should be implemented before the right is removed."
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "The purchasing of a VRB NFT grants access to participate in the governance and rewards of the DAO. This governance is responsible for a community treasury, which is grown via a once-a-day auction model + contributions from previously backed projects."
 msgstr ""
 
 #: src/components/Documentation/index.tsx
@@ -1075,9 +1099,17 @@ msgstr ""
 msgid "There was an error voting for your account."
 msgstr "アカウントの投票中にエラーが発生しました。"
 
+#: src/components/Documentation/index.tsx
+msgid "These tools in turn help support the Ethereum/Solana/Polygon communities of builders and the broader in real life (IRL) communities around them, promoting a cycle of improvement that leads to viral growth."
+msgstr ""
+
 #: src/components/ProfileActivityFeed/index.tsx
 msgid "This Vrb has no activity, since it was just created. Check back soon!"
 msgstr "このVrbは作成されたばかりで、動きがありません。また後ほどご確認ください！"
+
+#: src/components/Documentation/index.tsx
+msgid "This is rapid decentralization."
+msgstr ""
 
 #: src/components/ProposalContent/index.tsx
 msgid "This transaction sends {0} USDC to <0/> via the DAO's PayerContract."
@@ -1109,8 +1141,8 @@ msgstr ""
 #~ msgstr "コツ："
 
 #: src/components/Documentation/index.tsx
-msgid "Trait generation is not truly random. Traits can be predicted when minting a Vrb on the pending block."
-msgstr "特徴生成は完全にランダムというわけではなく、形質は、保留中のブロックにVrbをミントする際に予想することができます。"
+#~ msgid "Trait generation is not truly random. Traits can be predicted when minting a Vrb on the pending block."
+#~ msgstr "特徴生成は完全にランダムというわけではなく、形質は、保留中のブロックにVrbをミントする際に予想することができます。"
 
 #: src/components/Bid/index.tsx
 #: src/components/Bid/index.tsx
@@ -1133,9 +1165,9 @@ msgstr "トレジャリー"
 msgid "Twitter"
 msgstr "Twitter"
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Undetermined"
 msgstr "未決定"
 
@@ -1168,9 +1200,9 @@ msgstr "値"
 #~ msgid "Value in ETH (Optional)"
 #~ msgstr "ETHの価格 (任意)"
 
-#: src/components/VrbProfileVoteRow/index.tsx
 #: src/components/ProposalStatus/index.tsx
 #: src/components/ProposalStatusCopy/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Vetoed"
 msgstr "拒否"
 
@@ -1188,21 +1220,25 @@ msgstr "すべての入札を表示"
 
 #: src/components/ChangeDelegatePannel/index.tsx
 #: src/components/Holder/index.tsx
-#: src/components/VrbInfoRowHolder/index.tsx
 #: src/components/ProfileEvent/event/DesktopDelegationEvent/index.tsx
 #: src/components/ProfileEvent/event/DesktopDelegationEvent/index.tsx
-#: src/components/ProfileEvent/event/DesktopWinEvent/index.tsx
-#: src/components/ProfileEvent/event/DesktopWinEvent/index.tsx
 #: src/components/ProfileEvent/event/DesktopProposalVoteEvent/index.tsx
 #: src/components/ProfileEvent/event/DesktopTransferEvent/index.tsx
 #: src/components/ProfileEvent/event/DesktopTransferEvent/index.tsx
+#: src/components/ProfileEvent/event/DesktopWinEvent/index.tsx
+#: src/components/ProfileEvent/event/DesktopWinEvent/index.tsx
+#: src/components/VrbInfoRowHolder/index.tsx
 #: src/components/Winner/index.tsx
 msgid "View on Etherscan"
 msgstr "イーサスキャンで見る"
 
 #: src/components/Bid/index.tsx
-msgid "Vote for the next Vrb"
-msgstr "次のVrbに投票する"
+msgid "View the next vrb"
+msgstr ""
+
+#: src/components/Bid/index.tsx
+#~ msgid "Vote for the next Vrb"
+#~ msgstr "次のVrbに投票する"
 
 #: src/components/ExploreGrid/ExploreDetail/index.tsx
 msgid "Vote history"
@@ -1228,6 +1264,10 @@ msgstr "<0>{numVotesForProp}</0>のVrbで投票"
 msgid "Voted with<0>{numVotesForProp}</0>Vrbs"
 msgstr "<0>{numVotesForProp}</0>のVrbで投票"
 
+#: src/components/NavBar/index.tsx
+msgid "Voting"
+msgstr ""
+
 #: src/components/VoteModal/index.tsx
 msgid "Voting with <0>{0}</0> Vrb"
 msgstr ""
@@ -1236,14 +1276,156 @@ msgstr ""
 msgid "Voting with <0>{0}</0> Vrbs"
 msgstr ""
 
-#: src/components/Documentation/index.tsx
-msgid "WTF?"
-msgstr "WTF?"
+#: src/pages/Governance/index.tsx
+msgid "Vrb"
+msgstr "Vrb"
 
-#: src/components/VrbProfileVoteRow/index.tsx
+#: src/components/Documentation/index.tsx
+#~ msgid "Vrb Seeder Contract"
+#~ msgstr "Vrbシーダー契約"
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Vrb Traits"
+#~ msgstr "Vrbsの特徴"
+
+#: src/components/CurrentDelegatePannel/index.tsx
+msgid "Vrb votes are not transferable, but are <0>delegatable</0>, which means you can assign your vote to someone else as long as you own your Vrb."
+msgstr "Vrbの票は譲渡できませんが (Vrbの売却にはそれに応じて票も移ります)、委任することができます。"
+
+#: src/components/AuctionActivityVrbTitle/index.tsx
+#~ msgid "Vrb {0}"
+#~ msgstr "Vrb {0}"
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbder distributions don't interfere with the cadence of 24 hour auctions. Vrbs are sent directly to the Vrbder's Multisig, and auctions continue on schedule with the next available Vrb ID."
+msgstr "Vrbder配布により24時間オークションの頻度に影響が及ぶことはありません。 VrbsはVrbderのマルチシグに直接送られ、オークションは次の有効なVrbs IDによって予定通り継続されます。"
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbder's Reward"
+msgstr "Vrbderへの報酬"
+
+#: src/pages/Governance/index.tsx
+msgid "Vrbs"
+msgstr "Vrbs"
+
+#: src/components/NavBar/index.tsx
+#~ msgid "Vrbs & Traits"
+#~ msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs Art"
+msgstr ""
+
+#: src/components/VrbInfoRowHolder/index.tsx
+msgid "Vrbs Auction House"
+msgstr "Vrbsオークションハウス"
+
+#: src/components/Documentation/index.tsx
+#: src/components/FounderVrbContent/index.tsx
+#: src/pages/Governance/index.tsx
+msgid "Vrbs DAO"
+msgstr "Vrbs DAO"
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs DAO includes both Vrbs and y00t nouns."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs DAO uses a fork of {compoundGovLink}."
+msgstr "Vrbs DAOは {compoundGovLink} のフォークを使用しています。"
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Vrbs DAO utilizes a fork of {compoundGovLink} and is the main governing body of the Vrbs ecosystem. The Vrbs DAO treasury receives 100% of ETH proceeds from daily Vrb auctions. Each Vrb is an irrevocable member of Vrbs DAO and entitled to one vote in all governance matters. Vrb votes are non-transferable (if you sell your Vrb the vote goes with it) but delegatable, which means you can assign your vote to someone else as long as you own your Vrb."
+#~ msgstr "Vrbs DAOは {compoundGovLink} のフォークを利用しており、Vrbsエコシステムの主要な統治機関です。毎日起こるVrbオークションから得られるETHの収益の100％はVrbs DAO トレジャリーにて受け取られています。各VrbはVrbs DAOの変更不可能なメンバーであり、すべてのガバナンスの問題で1票の投票権を有します。Vrbの票は譲渡できませんが (Vrbの売却にはそれに応じて票も移ります)、委任することができます。"
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs DAO utilizes a fork of {nounsLink} and {compoundGovLink} and is the main governing body of the Vrbs ecosystem. The Vrbs DAO treasury receives 100% of ETH proceeds from daily Vrbs auctions. Each Vrb is an irrevocable member of Vrbs DAO and entitled to two vote in all governance matters and the right to draft proposals for treasury allocations."
+msgstr ""
+
+#: src/pages/Playground/index.tsx
+msgid "Vrbs Protocol"
+msgstr "Vrbsプロトコル"
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Vrbs are an experimental attempt to improve the formation of on-chain avatar communities. While projects such as {cryptopunksLink} have attempted to bootstrap digital community and identity, Vrbs attempt to bootstrap identity, community, governance, and a treasury that can be used by the community."
+#~ msgstr "Vrbs は、オンチェーン・アバターコミュニティの形成を改善するための実験的な試みです。{cryptopunksLink} などのプロジェクトがデジタルコミュニティとアイデンティティの構築を試みているのに対し、Vrbsはアイデンティティ、コミュニティ、ガバナンス、そしてコミュニティが使用できるトレジャリーを構築することを試みています。"
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs are an experimental attempt to improve the organization and impact of on-chain avatar communities pioneered by {nounsLink}."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Vrbs are generated randomly based Ethereum block hashes. There are no 'if' statements or other rules governing Vrb trait scarcity, which makes all Vrbs equally rare. As of this writing, Vrbs are made up of:"
+#~ msgstr "Vrbsは、イーサリアムのブロックハッシュに基づいてランダムに生成されます。Vrbの特徴の希少性を管理する「if」ステートメントやその他のルールは存在しないため、すべてのVrbが等しく希少となります。現時点では、Vrbsは以下のもので構成されています："
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs are selected randomly based Ethereum block hashes. There are no `if` statements or other rules governing Vrbs, which makes all Nouns equally rare."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Vrbs are stored directly on Ethereum and do not utilize pointers to other networks such as IPFS. This is possible because Vrb parts are compressed and stored on-chain using a custom run-length encoding (RLE), which is a form of lossless compression."
+#~ msgstr "VrbはEthereum上に直接保存されるため、IPFSのような他のネットワークへのポインタを利用することはありません。これは、Vrbのパーツが可逆圧縮の一種であるカスタムのランレングス圧縮 (RLE) を使用してオンチェーンで圧縮・保存されていることから実現したものです。"
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs art is uniquely positioned at the intersection of governance and provenance. Each Vrb has be hand-crafted over the course of months by the most prolific artists in the NFT ecosystem."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Vrbs artwork is in the {publicDomainLink}."
+#~ msgstr "Vrbsのアートワークは {publicDomainLink} にあります。"
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs artwork is the prototype of provenance, hand crafted for months by the highest quality cross-chain artists such as Pencilz, Marcolino, Degen Poet and more. The playful delight of each Vrb underscores it`s artistic origin, everything from a keen focus on color theory via the y00ts artists to paying homage to OG nouns traits. The art lives in the {publicDomainLink}."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs equal the individual voting members of the DAO."
+msgstr ""
+
+#: src/pages/Governance/index.tsx
+msgid "Vrbs govern <0>Vrbs DAO</0>. Vrbs can vote on proposals or delegate their vote to a third party. A minimum of <1>{vrbsRequired} {0}</1> is required to submit proposals."
+msgstr "Vrbsが統治する <0>Vrbs DAO</0> 。Vrbsは提案に対して投票したり、第三者に投票を委任することができますが、提案の提出には最低でも <1>{vrbsRequired} {0}</1> 以上が必要です。"
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Vrbs receive rewards in the form of Vrbs (10% of supply for first 5 years)."
+#~ msgstr "Vrbderには、Vrbsという形で報酬が与えられます (最初の5年間は供給量の10％)。"
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs votes are non-transferable (if you sell your Vrb the vote, and future holder rewards goes with it) with no delegation to others."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Vrbs vs y00t Nouns"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+#~ msgid "Vrbs will proveably revoke this veto right when they deem it safe to do so. This decision will be based on a healthy Vrb distribution and a community that is engaged in the governance process."
+#~ msgstr "Vrbderは、安全であると判断した場合、この拒否権を無効にすることが出来ます。この決定は、健全なVrbの分布と、ガバナンスプロセスに関与しているコミュニティに基づいて行われます。"
+
+#: src/pages/Founders/index.tsx
+msgid "Vrbs' Reward"
+msgstr "Vrbderへの報酬"
+
+#: src/components/Documentation/index.tsx
+#~ msgid "WTF?"
+#~ msgstr "WTF?"
+
 #: src/components/ProfileEvent/eventData/ProposalVoteHeadline/index.tsx
+#: src/components/VrbProfileVoteRow/index.tsx
 msgid "Waiting for"
 msgstr "待機"
+
+#: src/components/Documentation/index.tsx
+msgid "We accomplish this by taking Nouns orginal operating principles and improving on them in a sort of nouns 2.0, which will proliferate all things VRBish, and building from a solid foundation of experienced founders and a proven model. The DAO exists for the proliferation of VRBs and for returning value back to its members."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Where, projects such as {cryptopunksLink}, {degodsLink}, {y00tsLink}, and {ombLink} are pioneering onboaring chain specific digital community and identity."
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "Which brings us to today the VRBs and y00t noun communities will begin to build applications, rules, companies, games, art, and more within the framework (thought to life by the Architects, and developed on by the builders)."
+msgstr ""
 
 #: src/components/Documentation/index.tsx
 msgid "While settlement is most heavily incentivized for the winning bidder, it can be triggered by anyone, allowing the system to trustlessly auction Vrbs as long as Ethereum is operational and there are interested bidders."
@@ -1279,8 +1461,8 @@ msgid "You already have an active or pending proposal"
 msgstr "すでに有効または保留中の提案があります"
 
 #: src/components/Documentation/index.tsx
-msgid "You can experiment with off-chain Vrb generation at the {playgroundLink}."
-msgstr "{playgroundLink} にてオフチェーンのVrb生成を試すことができます。"
+#~ msgid "You can experiment with off-chain Vrb generation at the {playgroundLink}."
+#~ msgstr "{playgroundLink} にてオフチェーンのVrb生成を試すことができます。"
 
 #: src/components/SettleManuallyBtn/index.tsx
 msgid "You can settle manually in 1 minute"
@@ -1335,8 +1517,8 @@ msgid "Your <0>{availableVotes}</0> votes have been delegated to a new account."
 msgstr "あなたの<0>{availableVotes}</0>票が新しいアカウントに委任されました"
 
 #: src/components/Documentation/index.tsx
-msgid "accessories (140)"
-msgstr "付属品(140)"
+#~ msgid "accessories (140)"
+#~ msgstr "付属品(140)"
 
 #: src/components/AuctionTimer/index.tsx
 msgid "at"
@@ -1347,24 +1529,24 @@ msgid "at <0>{0}</0>"
 msgstr "<0>{0}</0> で"
 
 #: src/components/Documentation/index.tsx
-msgid "backgrounds (2)"
-msgstr "背景 (2)"
+#~ msgid "backgrounds (2)"
+#~ msgstr "背景 (2)"
 
 #: src/components/Documentation/index.tsx
-msgid "bodies (30)"
-msgstr "体 (30)"
+#~ msgid "bodies (30)"
+#~ msgstr "体 (30)"
 
 #: src/components/Documentation/index.tsx
-msgid "glasses (23)"
-msgstr "メガネ (23)"
+#~ msgid "glasses (23)"
+#~ msgstr "メガネ (23)"
 
 #: src/components/AuctionTimer/index.tsx
 msgid "h"
 msgstr "時間"
 
 #: src/components/Documentation/index.tsx
-msgid "heads (242)"
-msgstr "頭 (242)"
+#~ msgid "heads (242)"
+#~ msgstr "頭 (242)"
 
 #: src/components/AuctionTimer/index.tsx
 msgid "m"
@@ -1381,6 +1563,14 @@ msgstr "パブリックドメイン"
 #: src/components/AuctionTimer/index.tsx
 msgid "s"
 msgstr "秒"
+
+#: src/components/AuctionActivityVrbTitle/index.tsx
+msgid "vrb {0}"
+msgstr ""
+
+#: src/components/Documentation/index.tsx
+msgid "y00ts"
+msgstr ""
 
 #: src/components/VoteCard/index.tsx
 #~ msgid "{0} <0>Address </0>"
