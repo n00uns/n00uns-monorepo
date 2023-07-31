@@ -9,7 +9,7 @@
 
 .auctionActivityCol {
   opacity: 1;
-  z-index: 3;
+  z-index: 1;
   margin-top: 3px;
   padding-right: 2.5rem;
   padding-bottom: 0rem;
@@ -25,8 +25,8 @@
   width: 100%;
   position:absolute;
   transform: translateY(-131px);
-  opacity: 20%;
-  z-index: 0;
+  opacity: 20% !important;
+  z-index: 1;
 }
 
 @media (max-width: 991.98px) {

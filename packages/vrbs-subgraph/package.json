@@ -26,7 +26,7 @@
     "deploy:hardhat": "yarn clean && yarn prepare:hardhat && yarn codegen && yarn create:localnode vrbsdao/vrbs-subgraph && yarn deploy:localnode vrbsdao/vrbs-subgraph",
     "deploy:rinkeby": "yarn clean && yarn prepare:rinkeby && yarn codegen && yarn deploy vrbsdao/vrbs-subgraph-rinkeby",
     "deploy:mainnet": "yarn clean && yarn prepare:mainnet && yarn codegen && yarn deploy vrbsdao/vrbs-subgraph",
-    "deploy:goerli": "yarn clean && yarn prepare:goerli && yarn codegen && yarn deploy verbsteam/vrbs-goerli",
+    "deploy:goerli": "yarn clean && yarn prepare:goerli && yarn codegen && yarn deploy --studio vrbs-goerli",
     "deploy:mumbai": "yarn clean && yarn prepare:mumbai && yarn codegen && yarn deploy verbsteam/vrbs-mumbai",
     "mustache": "mustache"
   },

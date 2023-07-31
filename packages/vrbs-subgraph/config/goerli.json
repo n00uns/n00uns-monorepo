@@ -1,11 +1,11 @@
 {
   "network": "goerli",
   "vrbsToken": {
-    "address": "0x1d0030f304b542D5A5F77CC0E5945fd79ec89D8E",
+    "address": "0x5962130eBBdf27ce13107aAeb7622CD3F957761f",
     "startBlock": 7734001
   },
   "vrbsAuctionHouse": {
-    "address": "0xC143D0F48E0ba1e547Ff0fE489b4DC7A90063683",
+    "address": "0xcAAa39016c1F10C9cC6Ee90daC7E5d08c7b09E5F",
     "startBlock": 7734001
   },
   "vrbsDAO": {
