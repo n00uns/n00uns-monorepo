@@ -52,8 +52,6 @@ const currentBid = (bidInputRef: React.RefObject<HTMLInputElement>) => {
   return new BigNumber(utils.parseEther(bidInputRef.current.value).toString());
 };
 
-
-
 const Bid: React.FC<{
   auction: Auction;
   auctionEnded: boolean;

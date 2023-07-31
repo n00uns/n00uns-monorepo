@@ -44,7 +44,7 @@ const CurrentBid: React.FC<{ currentBid: BigNumber | BidNa; auctionEnded: boolea
         <h3
           className={classes.currentCurrency}
         >
-          WETH
+          ETH
         </h3>
       </Col>
     </Row>

@@ -5,6 +5,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import Link from '../Link';
 import { Trans } from '@lingui/macro';
 import pixel_border_reverse from '../../assets/pixel_border_reverse.svg';
+import bg from '../../assets/home/home-sec2.png';
 
 interface DocumentationProps {
   backgroundColor?: string;
@@ -59,6 +60,7 @@ const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) 
   const nounsLink = (
     <Link text={<Trans>Nouns.wtf</Trans>} url="https://nouns.wtf" leavesPage={true} />
   );
+  
   return (
     <>
       <Section
@@ -73,6 +75,7 @@ const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) 
         className={classes.documentationSection}
         style={{ background: props.backgroundColor }}
       >
+      <img src={bg} className={classes.documentationBg} alt="backgroundImage" />
         <Col lg={{ span: 10, offset: 1 }}>
           <div className={classes.headerWrapper}>
             <h1>

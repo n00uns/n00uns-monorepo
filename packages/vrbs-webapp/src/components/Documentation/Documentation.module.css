@@ -6,6 +6,13 @@
   padding: 4rem 0 !important;
 }
 
+.documentationBg {
+  width: 100%;
+  position:absolute;
+  opacity: 20% !important;
+  max-width: -webkit-fill-available;
+}
+
 .headerWrapper h1 {
   font-family: 'Londrina Solid';
   font-size: 4rem;
