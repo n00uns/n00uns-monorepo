@@ -9,7 +9,7 @@
 .documentationBg {
   width: 100%;
   position:absolute;
-  opacity: 20% !important;
+  opacity: .2;
   max-width: -webkit-fill-available;
 }
 
