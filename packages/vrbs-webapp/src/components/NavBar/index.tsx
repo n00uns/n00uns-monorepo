@@ -43,7 +43,8 @@ const NavBar = () => {
   const useStateBg =
     history.location.pathname === '/' ||
     history.location.pathname.includes('/vrb/') ||
-    history.location.pathname.includes('/auction/');
+    history.location.pathname.includes('/auction/') ||
+    history.location.pathname.includes('/manifesto');
 
   const nonWalletButtonStyle = !useStateBg
     ? NavBarButtonStyle.WHITE_INFO
@@ -102,10 +103,9 @@ const NavBar = () => {
               />
             </Nav.Link>
             <Nav.Link
-              href={externalURL(ExternalURL.vrbsCenter)}
+              as={Link} 
+              to="/manifesto"
               className={classes.vrbsNavLink}
-              target="_blank"
-              rel="noreferrer"
               onClick={closeNav}
             >
               <NavBarButton
