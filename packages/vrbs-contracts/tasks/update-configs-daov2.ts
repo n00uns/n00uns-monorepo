@@ -18,10 +18,7 @@ task('update-configs-daov2', 'Write the deployed addresses to the SDK and subgra
       const addressesPath = join(sdkPath, 'src/contract/addresses.json');
       const addresses = JSON.parse(readFileSync(addressesPath, 'utf8'));
       addresses[chainId] = {
-        vrbsToken: contracts.VrbsToken.address,
-        vrbsSeeder: contracts.Seeder2.address,
-        vrbsDescriptor: contracts.DescriptorV2.address,
-        nftDescriptor: contracts.NFTDescriptorV2.address,
+        vrbsToken: contracts.VrbsTokenV2.address,
         vrbsAuctionHouse: contracts.AuctionHouse.address,
         vrbsAuctionHouseProxy: contracts.AuctionHouseProxy.address,
         vrbsAuctionHouseProxyAdmin: contracts.AuctionHouseProxyAdmin.address,
@@ -45,8 +42,8 @@ task('update-configs-daov2', 'Write the deployed addresses to the SDK and subgra
       const subgraphConfig = {
         network,
         vrbsToken: {
-          address: contracts.VrbsToken.address,
-          startBlock: contracts.VrbsToken.instance.deployTransaction.blockNumber,
+          address: contracts.VrbsTokenV2.address,
+          startBlock: contracts.VrbsTokenV2.instance.deployTransaction.blockNumber,
         },
         vrbsAuctionHouse: {
           address: contracts.AuctionHouseProxy.address,
