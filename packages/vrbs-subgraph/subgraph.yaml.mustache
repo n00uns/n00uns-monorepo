@@ -34,12 +34,12 @@ dataSources:
         - event: AuctionSettled(indexed uint256,address,uint256)
           handler: handleAuctionSettled
   - kind: ethereum/contract
-    name: VrbsToken
+    name: VrbsTokenV2
     network: {{network}}
     source:
-      address: '{{vrbsToken.address}}'
-      abi: VrbsToken
-      startBlock: {{vrbsToken.startBlock}}
+      address: '{{vrbsTokenV2.address}}'
+      abi: VrbsTokenV2
+      startBlock: {{vrbsTokenV2.startBlock}}
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6
@@ -52,11 +52,9 @@ dataSources:
         - Delegate
         - Governance
       abis:
-        - name: VrbsToken
-          file: ../vrbs-contracts/abi/contracts/VrbsToken.sol/VrbsToken.json
+        - name: VrbsTokenV2
+          file: ../vrbs-contracts/abi/contracts/VrbsTokenV2.sol/VrbsTokenV2.json
       eventHandlers:
-        - event: VrbCreated(indexed uint256,(uint48,uint48,uint48,uint48,uint48))
-          handler: handleVrbCreated
         - event: DelegateChanged(indexed address,indexed address,indexed address)
           handler: handleDelegateChanged
         - event: DelegateVotesChanged(indexed address,uint256,uint256)
