@@ -1,6 +1,6 @@
 {
   "network": "goerli",
-  "vrbsTokenV2": {
+  "vrbsToken": {
     "address": "0xBa956e50A476EA7F7a7690b56F45A96baAC70f71",
     "startBlock": 9437058
   },

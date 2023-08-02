@@ -4,7 +4,7 @@ import {
   DelegateVotesChanged,
   VrbCreated,
   Transfer,
-} from './types/VrbsToken/VrbsToken';
+} from './types/VrbsTokenV2/VrbsTokenV2';
 import { Vrb, Seed, DelegationEvent, TransferEvent } from './types/schema';
 import { BIGINT_ONE, BIGINT_ZERO, ZERO_ADDRESS } from './utils/constants';
 import { getGovernanceEntity, getOrCreateDelegate, getOrCreateAccount } from './utils/helpers';
