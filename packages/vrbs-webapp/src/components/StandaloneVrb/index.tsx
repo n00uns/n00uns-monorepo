@@ -36,13 +36,13 @@ export const getVrb = (vrbId: string | EthersBN, seed: IVrbSeed) => {
   const id = vrbId.toString();
   const name = `Vrb ${id}`;
   const description = `Vrb ${id} is a member of the Vrbs DAO`;
-  console.log('getting vrb image from ' + id);
+  // console.log('getting vrb image from ' + id);
 
   const { fullImage } = getVrbData(id);
 
-  console.log(fullImage);
+  // console.log(fullImage);
   return {
-    fullImage
+    fullImage,
   };
 };
 
@@ -51,7 +51,7 @@ export const StandaloneVrbImage: React.FC<StandaloneVrbProps> = (props: Standalo
   const seed = useVrbSeed(vrbId);
   const vrb = seed && getVrb(vrbId, seed);
 
-  return <Image src={vrb ? (vrb.fullImage) : ''} fluid />;
+  return <Image src={vrb ? vrb.fullImage : ''} fluid />;
 };
 
 const StandaloneVrb: React.FC<StandaloneVrbProps> = (props: StandaloneVrbProps) => {
@@ -112,11 +112,7 @@ export const StandaloneVrbRoundedCorners: React.FC<StandaloneVrbProps> = (
 
   return (
     <Link to={'/vrb/' + vrbId.toString()} className={classes.clickableVrb} onClick={onClickHandler}>
-      <Vrb
-        imgPath={vrb ? vrb.fullImage : ''}
-        alt={'Vrb'}
-        className={vrbClasses.rounded}
-      />
+      <Vrb imgPath={vrb ? vrb.fullImage : ''} alt={'Vrb'} className={vrbClasses.rounded} />
     </Link>
   );
 };

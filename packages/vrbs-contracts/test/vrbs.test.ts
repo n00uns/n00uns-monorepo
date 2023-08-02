@@ -62,7 +62,7 @@ describe('VrbsToken', () => {
   });
 
   it('should set symbol', async () => {
-    expect(await vrbsToken.symbol()).to.eq('N00UN');
+    expect(await vrbsToken.symbol()).to.eq('Vrb');
   });
 
   it('should set name', async () => {

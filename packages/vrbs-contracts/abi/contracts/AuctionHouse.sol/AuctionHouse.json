@@ -256,8 +256,8 @@
   {
     "inputs": [
       {
-        "internalType": "contract IN00unsToken",
-        "name": "_n00uns",
+        "internalType": "contract IVrbsToken",
+        "name": "_vrbs",
         "type": "address"
       },
       {
@@ -306,10 +306,10 @@
   },
   {
     "inputs": [],
-    "name": "n00uns",
+    "name": "vrbs",
     "outputs": [
       {
-        "internalType": "contract IN00unsToken",
+        "internalType": "contract IVrbsToken",
         "name": "",
         "type": "address"
       }

@@ -43,7 +43,8 @@ const NavBar = () => {
   const useStateBg =
     history.location.pathname === '/' ||
     history.location.pathname.includes('/vrb/') ||
-    history.location.pathname.includes('/auction/');
+    history.location.pathname.includes('/auction/') ||
+    history.location.pathname.includes('/manifesto');
 
   const nonWalletButtonStyle = !useStateBg
     ? NavBarButtonStyle.WHITE_INFO
@@ -93,23 +94,22 @@ const NavBar = () => {
             aria-controls="basic-navbar-nav"
             onClick={() => setIsNavExpanded(!isNavExpanded)}
           />
-          <Navbar.Collapse className="justify-content-end">
+          <Navbar.Collapse className={classes.linksWrapper}>
             <Nav.Link as={Link} to="/vote" className={classes.vrbsNavLink} onClick={closeNav}>
               <NavBarButton
-                buttonText={<Trans>DAO</Trans>}
+                buttonText={<Trans>Voting</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faUsers} />}
                 buttonStyle={nonWalletButtonStyle}
               />
             </Nav.Link>
             <Nav.Link
-              href={externalURL(ExternalURL.vrbsCenter)}
+              as={Link} 
+              to="/manifesto"
               className={classes.vrbsNavLink}
-              target="_blank"
-              rel="noreferrer"
               onClick={closeNav}
             >
               <NavBarButton
-                buttonText={<Trans>Docs</Trans>}
+                buttonText={<Trans>Our Manifesto</Trans>}
                 buttonIcon={<FontAwesomeIcon icon={faBookOpen} />}
                 buttonStyle={nonWalletButtonStyle}
               />

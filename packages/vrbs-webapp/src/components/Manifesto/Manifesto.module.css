@@ -1,0 +1,58 @@
+.manifestoBorderSection {
+  padding: 0 0 !important;
+}
+
+.manifestoSection {
+  padding: 2rem 0 !important;
+}
+
+.manifestoBg {
+  width: 100%;
+  position:absolute;
+  opacity: .2;
+  max-width: fit-content;
+}
+
+.manifestoImg {
+  max-width: -webkit-fill-available;
+  padding-bottom: 2rem;
+}
+
+.headerWrapper h5 {
+  font-family: 'Londrina Solid';
+  font-weight: medium;
+}
+
+.aboutMedium {
+  font-weight: bold !important;
+}
+
+.headerWrapper p {
+  color: var(--brand-color-green);
+  font-family: 'PT Root UI', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.25px;
+  line-height: 28px;
+  margin: 1rem 0;
+}
+
+.manifestoBorder {
+  width: 100%;
+  z-index: 2;
+}
+
+@media (max-width: 992px) {
+  .headerWrapper {
+    padding: 1rem;
+  }
+  .aboutText {
+    margin: 0px !important;
+  }
+}
+
+
+@media (max-width: 992px) {
+  .manifestoSection {
+    padding: 2rem 0 !important;
+  }
+}
