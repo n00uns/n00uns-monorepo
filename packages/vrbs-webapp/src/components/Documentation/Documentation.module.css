@@ -13,6 +13,11 @@
   max-width: -webkit-fill-available;
 }
 
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 .headerWrapper h1 {
   font-family: 'Londrina Solid';
   font-size: 4rem;
