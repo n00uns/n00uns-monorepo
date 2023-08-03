@@ -13,26 +13,12 @@ interface DocumentationProps {
 
 const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) => {
   const cryptopunksLink = (
-    <Link
-      text={<Trans>Cryptopunks</Trans>}
-      url="https://cryptopunks.app"
-      leavesPage={true}
-    />
+    <Link text={<Trans>Cryptopunks</Trans>} url="https://cryptopunks.app" leavesPage={true} />
   );
   const degodsLink = (
-    <Link
-      text={<Trans>Degods</Trans>}
-      url="https://degods.com"
-      leavesPage={true}
-    />
+    <Link text={<Trans>Degods</Trans>} url="https://degods.com" leavesPage={true} />
   );
-  const y00tsLink = (
-    <Link
-      text={<Trans>y00ts</Trans>}
-      url="https://y00ts.com"
-      leavesPage={true}
-    />
-  );
+  const y00tsLink = <Link text={<Trans>y00ts</Trans>} url="https://y00ts.com" leavesPage={true} />;
   const ombLink = (
     <Link
       text={<Trans>Ordinal Maxi Business</Trans>}
@@ -43,24 +29,24 @@ const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) 
   // const playgroundLink = (
   //   <Link text={<Trans>Playground</Trans>} url="/playground" leavesPage={false} />
   // );
-  const publicDomainLink = (
-    <Link
-      text={<Trans>public domain</Trans>}
-      url="https://creativecommons.org/publicdomain/zero/1.0/"
-      leavesPage={true}
-    />
-  );
-  const compoundGovLink = (
-    <Link
-      text={<Trans>Compound Governance</Trans>}
-      url="https://compound.finance/governance"
-      leavesPage={true}
-    />
-  );
+  // const publicDomainLink = (
+  //   <Link
+  //     text={<Trans>public domain</Trans>}
+  //     url="https://creativecommons.org/publicdomain/zero/1.0/"
+  //     leavesPage={true}
+  //   />
+  // );
+  // const compoundGovLink = (
+  //   <Link
+  //     text={<Trans>Compound Governance</Trans>}
+  //     url="https://compound.finance/governance"
+  //     leavesPage={true}
+  //   />
+  // );
   const nounsLink = (
     <Link text={<Trans>Nouns.wtf</Trans>} url="https://nouns.wtf" leavesPage={true} />
   );
-  
+
   return (
     <>
       <Section
@@ -75,7 +61,7 @@ const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) 
         className={classes.documentationSection}
         style={{ background: props.backgroundColor }}
       >
-      <img src={bg} className={classes.documentationBg} alt="backgroundImage" />
+        <img src={bg} className={classes.documentationBg} alt="backgroundImage" />
         <Col lg={{ span: 10, offset: 1 }}>
           <div className={classes.headerWrapper}>
             <h1>
@@ -89,8 +75,8 @@ const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) 
             </p>
             <p className={classes.aboutText}>
               <Trans>
-                Where, projects such as {cryptopunksLink}, {degodsLink}, {y00tsLink}, and {ombLink} are
-                pioneering onboaring chain specific digital community and identity.
+                Where, projects such as {cryptopunksLink}, {degodsLink}, {y00tsLink}, and {ombLink}{' '}
+                are pioneering onboaring chain specific digital community and identity.
               </Trans>
             </p>
             <p className={classes.aboutText} style={{ paddingBottom: '4rem' }}>
@@ -104,142 +90,232 @@ const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) 
           <Accordion flush>
             <Accordion.Item eventKey="0" className={classes.accordionItem}>
               <Accordion.Header className={classes.accordionHeader}>
-                <Trans>Summary</Trans>
+                <Trans>The Summary</Trans>
               </Accordion.Header>
               <Accordion.Body>
+                <p>
+                  <Trans>
+                    The Vrb characters are the prototype of provenance, whose artistic development
+                    was led by the super-talented cross-chain and multidisciplinary artists Pencilx
+                    and Marculino. The playful nature of each Vrb character underscores their
+                    origins, paying homage to the CCO Nouns on Ethereum and the y00ts collection,
+                    with a focus on creating a cast of digital pixel characters that could transcend
+                    generative art.
+                  </Trans>
+                </p>
                 <ul>
-                  <li>
-                    <Trans>
-                      Vrbs artwork is the prototype of provenance, hand crafted for months by the
-                      highest quality cross-chain artists such as Pencilz, Marcolino, Degen Poet and
-                      more. The playful delight of each Vrb underscores it`s artistic origin,
-                      everything from a keen focus on color theory via the y00ts artists to paying
-                      homage to OG nouns traits. The art lives in the {publicDomainLink}.
-                    </Trans>
-                  </li>
                   <li>
                     <Trans>One Vrb is trustlessly auctioned every 24 hours.</Trans>
                   </li>
                   <li>
                     <Trans>
-                      100% of Vrbs auction proceeds are trustlessly sent to the treasury, 80% for
-                      DAO allocation, 20% for holder rewards and DAO expenses voted on by holders.
-                    </Trans>
-                  </li>
-                  <li>
-                    <Trans>Settlement of one auction kicks off the next.</Trans>
-                  </li>
-                  <li>
-                    <Trans>
-                      All VRBs are members of an exclusive cohort known as the Vrbs DAO, which
-                      consists of top-tier cross chain Artists, Creators, Venture Capitalists,
-                      Whales, Founders, and Innovators.
-                    </Trans>
-                  </li>
-                  <li>
-                    <Trans>Vrbs DAO uses a fork of {compoundGovLink}.</Trans>
-                  </li>
-                  <li>
-                    <Trans>Vrbs DAO includes both Vrbs and y00t nouns. </Trans>
-                    <ul>
-                      <li>
-                        <Trans>
-                          One Vrb is equal to the write to make proposals and two votes.
-                        </Trans>
-                      </li>
-                      <li>
-                        <Trans>One y00t nouns is equal to one vote.</Trans>
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <Trans>The treasury is controlled exclusively by Vrbs via governance.</Trans>
-                  </li>
-                  <li>
-                    <Trans>
-                      Artwork is hand-crafted 1/1s, stored directly on-chain (not IPFS).
+                      100% of the proceeds from each auction are trustlessly sent to the DAO
+                      treasury, where 80% is allocated for use by the DAO members and 20% for
+                      community rewards and DAO expenses.
                     </Trans>
                   </li>
                   <li>
                     <Trans>
-                      No explicit rules exist for attribute scarcity; all Vrbs are equally rare.
+                      Settlement of one auction will automatically kick off the next auction.
                     </Trans>
                   </li>
                   <li>
-                    <Trans>Architects equal the developers of the DAO framework.</Trans>
-                  </li>
-                  <li>
                     <Trans>
-                      Builders equal the execution layer of the DAO responsible for everything
-                      Vrbish (allocation of funds, onboarding new members, social media).
+                      All Vrb NFT holders are members of Vrbs DAO, which consists of people from
+                      around the world who are interested in making a broad impact on society. The
+                      goal of the Vrb NFTs is to create, foster, and nurture a super community of
+                      people. Current members include top-tier entrepreneurs, artists, creators,
+                      developers, investors, and thought leaders in the web3 space.
                     </Trans>
                   </li>
                   <li>
-                    <Trans>Vrbs equal the individual voting members of the DAO.</Trans>
+                    <Trans>
+                      Vrbs DAO uses a fork of Nouns DAO and compound governance. The treasury is
+                      controlled exclusively by Vrbs and y00t Nouns via governance.
+                    </Trans>
                   </li>
                   <li>
                     <Trans>
-                      Architects receive rewards in the form of Vrbs distributed on day 0, 10% of
-                      the supply of each chain specific DAO when it launches. This allows the
-                      Architects to experience the same level of dilution as every other holder, in
-                      addition to giving them the votes to help curate the DAO in it’s infancy,
-                      until critical consensus mass is reached.
+                      Vrbs DAO is made up of two types of members, Vrbs and y00t Nouns. Vrbs and
+                      y00t Nouns are the individual voting members of the DAO.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Holding 1 Vrb gives members the right to make proposals and submit one vote
+                      per proposal.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Holding 1 y00t Noun gives members the right to vote. Submission of proposals
+                      is possible by pairing up with a fellow Vrb holder to co-submit proposals,
+                      fostering community building between members.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      The Vrbs are hand-drawn 1/1 characters whose development was led by artists
+                      Pencilx and Marculino. The artwork is stored directly on-chain (not IPFS). New
+                      top-tier artists will reinterpret the Vrbs characters as time goes on.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>All Vrbs are equally rare.</Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Vrb Architects are the developers of the DAO vision, framework, and culture.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Vrb Builders are the execution layer of the DAO responsible for everything
+                      Vrbish, including allocation of funds, scaling out operations, ideating new
+                      ventures, and onboarding new members, etc.
+                    </Trans>
+                  </li>
+                </ul>
+                <p className={classes.subtitle}>
+                  <Trans>Will Vrbs DAO continue to work like Nouns?</Trans>
+                </p>
+                <ul>
+                  <li>
+                    <Trans>
+                      Vrbs DAO is a multi-chain DAO whose aim is to build and proliferate
+                      culture-impacting ideas via the Nouns DAO protocol. We are a group of
+                      ambitious founders, builders, artists and change makers brought together by
+                      the mutual conviction that a DAO, that is empowered by a strong community,
+                      funded by a sustainable treasury, and incentivized to do good, can have a
+                      small and big impact on the communities around us.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      In the words of Punk 4156, “there are several things we could/would have done
+                      differently with Nouns but hindsight is 20/20”.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      We have the benefit of hindsight, and have taken the time to evaluate all of
+                      the pro's and con's of the DAO in order to make a “V2” of nouns that is
+                      hyper-charged by a super community. We believe that we can have a meaningful
+                      impact on society and the communities around us by combining the power of
+                      people and communities with a decentralized governance structure that allows
+                      for fast mobilization and capital deployment.
                     </Trans>
                   </li>
                 </ul>
               </Accordion.Body>
             </Accordion.Item>
-
             <Accordion.Item eventKey="1" className={classes.accordionItem}>
               <Accordion.Header className={classes.accordionHeader}>
-                <Trans>Daily Auctions</Trans>
+                <Trans>Vrbs DAO?</Trans>
               </Accordion.Header>
               <Accordion.Body>
-                <p className={classes.aboutText}>
+                <p>
                   <Trans>
-                    The Vrbs Auction Contract will live in the public domain for fork-ability, and
-                    act as a self-sufficient Vrb generation and distribution mechanism, auctioning
-                    one Vrb every 24 hours, forever. 100% of auction proceeds (ETH) are
-                    automatically deposited in the Vrbs DAO treasury, 80% to a decentralized
-                    multisig for allocation to DAO proposals, 20% to a decentralized multisig for
-                    allocation to DAO rewards (Vrb holders) and expenses. Both wallets will only
-                    allocate funds when approved by the collective body of Vrbs owners.
-                  </Trans>
-                </p>
-
-                <p className={classes.aboutText}>
-                  <Trans>
-                    Each time an auction is settled, the settlement transaction will also cause a
-                    new Vrb to be minted and a new 24 hour auction to begin.
+                    Vrbs DAO is an experimental decentralized autonomous organization (DAO)
+                    attempting to bootstrap technology at the intersection of NFTs, DAOs, IP Rights,
+                    and DeFi (treasury voting) to push the boundaries of NFT application and utility
+                    in the real world.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                    While settlement is most heavily incentivized for the winning bidder, it can be
-                    triggered by anyone, allowing the system to trustlessly auction Vrbs as long as
-                    Ethereum is operational and there are interested bidders.
+                    Whereas CryptoPunks attempted to bootstrap digital community and identity to
+                    much success. Whereas Nouns, took community and identity a step further,
+                    layering on governance and a treasury that can be used by the community.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Vrbs is the next iteration in this lineup, bootstrapping everything that the
+                    Nouns successfully pioneered, and overlaying a [super community with a culture
+                    of action] on top of [identity, community, governance, and a shared treasury].
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    This experiment establishes a kind of modern day tribuni plebis, by which an
+                    ordinary individual, as part of a broader community, holds the power to create
+                    pervasive and lasting social good in the world without a central governing body
+                    or authority.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    This ethos allows the DAO identity, community, governance, and treasury to be
+                    determined by the holders and for the holders.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Each Vrb NFT & y00t Noun presents its owner with a key to cross chain (ETH
+                    current state, Polygon and Solana future state) governance and ownership, that
+                    is at the heart of the Vrbs mission. The DAO treasury exists to inspire the
+                    community that created it as well as the world around it.
                   </Trans>
                 </p>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="2" className={classes.accordionItem}>
               <Accordion.Header className={classes.accordionHeader}>
-                <Trans>Vrbs DAO</Trans>
+                <Trans>The Auctions: How it Works</Trans>
               </Accordion.Header>
               <Accordion.Body>
-                <p>
+                <p className={classes.subtitle}>
+                  <Trans>Daily Auctions:</Trans>
+                </p>
+                <p className={classes.aboutText}>
                   <Trans>
-                    Vrbs DAO utilizes a fork of {nounsLink} and {compoundGovLink} and is the main
-                    governing body of the Vrbs ecosystem. The Vrbs DAO treasury receives 100% of ETH
-                    proceeds from daily Vrbs auctions. Each Vrb is an irrevocable member of Vrbs DAO
-                    and entitled to two vote in all governance matters and the right to draft
-                    proposals for treasury allocations.
+                    The Nouns DAO model of a once a day auction is wildly successful and has become
+                    a model by which communities can slowly onboard like minded individuals with
+                    high conviction in what the DAO is building.
+                  </Trans>
+                </p>
+                <p className={classes.aboutText}>
+                  <Trans>
+                    The Vrbs DAO community is one that is passionate about art, governance,
+                    cross-chain innovation, and business. It takes what Nouns have bootstrapped with
+                    digital identity, provenance, community, and a treasury, and overlaps a super
+                    community of people who operate with a culture of action.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                    Vrbs votes are non-transferable (if you sell your Vrb the vote, and future
-                    holder rewards goes with it) with no delegation to others.
+                    The Vrb auctions will take place daily on Ethereum, similar to the Nouns. The
+                    auction smart contract will act as a self-sufficient Vrbs NFT generation and
+                    distribution mechanism, auctioning one Vrb NFT every 24 hours.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    The Vrbs artwork is the prototype of provenance as drawn by @Pencilx &
+                    @Marculino. Each Vrb NFT represents a hand drawn piece of history and a stake in
+                    the future of Vrbs DAO.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    100% of the proceeds from each auction are trustlessly sent to the DAO treasury,
+                    where 80% is allocated for use by the DAO members and 20% for community rewards
+                    and DAO expenses with 3 out of 5 signatures required from delegates who were
+                    voted on by the community.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Each time an auction is settled, the settlement transaction will be followed by
+                    a new Vrbs NFT being minted and a new 24 hour auction beginning.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    The winner of the once-a-day auction will be granted access and rights into the
+                    Vrbs DAO, allowing them to vote, draft proposals, receive community rewards, and
+                    participate in the broader governance of the DAO.
                   </Trans>
                 </p>
               </Accordion.Body>
@@ -249,185 +325,349 @@ const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) 
                 <Trans>Governance ‘Slow Start’</Trans>
               </Accordion.Header>
               <Accordion.Body>
+                <p className={classes.subtitle}>
+                  <Trans>Proposal Guidance Tooling</Trans>
+                </p>
                 <p>
                   <Trans>
-                    In addition to the security and precautions taken by Nouns DAO, Vrbs Developers,
-                    and Compound Governance, the Architects have given themselves a special veto
-                    right to ensure that no malicious proposals can be passed while the Vrbs supply
-                    is low. This veto right will only be used if an obviously harmful governance
-                    proposal has been passed, and is intended as a last resort.
+                    We want to make it easy for DAO members to submit high quality proposals for the
+                    DAO that are set up for success in execution and outcome. As a result, the DAO
+                    will have what we are calling “Proposal Guidance Tooling”, which is a set of
+                    documents and tools that will allow for fast and efficient proposal submission
+                    and management.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                    The Vrbs community has undertaken a preliminary exploration of proposal veto
-                    alternatives (‘rage quit’ etc.), but it is now clear that this is a difficult
-                    problem that will require significantly more research, development and testing
-                    before a satisfactory solution can be implemented.
+                    A Governance Team will also be a critically important part of the DAO, providing
+                    leadership and mentorship on the drafting and execution of proposals.
                   </Trans>
+                </p>
+                <p className={classes.subtitle}>
+                  <Trans>Small grants, expenses, retroactive and emergency proposals</Trans>
                 </p>
                 <p>
                   <Trans>
-                    The Architects consider the veto an emergency power that should not be exercised
-                    in the normal course of business. Architects will veto proposals that introduce
-                    non-trivial legal or existential risks to the DAO, including (but not
-                    necessarily limited to) proposals that:
+                    For grants that require small financial support (0.1 to 5 ETH), there is a
+                    straightforward process that does not require the full DAO proposal process,
+                    unless the grants committee believes that a public vote makes more sense given
+                    the specific requirements of the proposal. This ensures that there is no waiting
+                    for the whole Vrbs DAO to vote on proposals that contribute to the success or
+                    long term viability of the DAO. A dedicated Grants Committee can approve these
+                    requests for funding with 3 out of 5 signatures.
                   </Trans>
+                </p>
+                <p className={classes.subtitle}>
+                  <Trans>Proposals</Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Proposals are an important way for y00t Nouns and Vrbs to contribute to Vrbs DAO
+                    and its mission. Proposals can range from different topics, including proposals
+                    around governance, marketing, philanthropic initiatives, DAO development, etc.
+                    Proposals have some requirements and a process to follow before they can be
+                    approved or rejected by the Vrbs community.
+                  </Trans>
+                </p>
+                <p className={classes.subtitle}>
+                  <Trans>Requirements for Proposals</Trans>
                 </p>
                 <ul>
-                  <li>unequally withdraw the treasury for personal gain</li>
-                  <li>bribe voters to facilitate withdraws of the treasury for personal gain</li>
                   <li>
-                    attempt to alter Vrbs auction cadence for the purpose of maintaining or
-                    acquiring a voting majority
+                    Only Vrbs or y00t Nouns that are co-authors with Vrbs can submit proposals.
+                    y00ts need to have a Vrb sponsor (holder who holds a Vrb NFT).
                   </li>
-                  <li>make upgrades to critical smart contracts without undergoing an audit</li>
+                  <li>
+                    Proposals need to have a clear and concise format that explains the project, its
+                    goals, its budget, its timeline, and its success metrics.
+                  </li>
+                  <li>
+                    Proposals will be posted on Discourse in the Vrbs forum, using the Proposal
+                    category. They will be token gated, meaning only Vrbs holders can access them.
+                  </li>
+                  <li>
+                    Proposals need to be either requesting more than 5 ETH in funding or proposing
+                    fundamental changes in governance or other core elements in the DAO.
+                  </li>
+                </ul>
+                <p className={classes.subtitle}>
+                  <Trans>Process for Proposals</Trans>
+                </p>
+                <ul>
+                  <li>
+                    <Trans>
+                      Proposals start as drafts on Discourse, where they can receive feedback and
+                      suggestions from the Vrbs community. The proposers can refine their proposals
+                      based on the input they receive.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Proposals then move to on-chain voting, where they are submitted to the Vrbs
+                      DAO smart contract. They need to undergo a 7-day process that consists of two
+                      phases: pending and active.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Pending phase: This is a 2-day window where the proposal is public but not
+                      votable. This is an opportunity for more discussion and debate around the
+                      proposal.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Active phase: This is a 3-day window where the proposal is open for voting by
+                      Vrbs holders. The proposal will either succeed or fail based on the quorum and
+                      majority thresholds set by the DAO.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      If the proposal succeeds, it will be executed by the proposers or the DAO,
+                      depending on the nature of the proposal. If the proposal fails, it will be
+                      archived and can be resubmitted later with modifications.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>The final 2 days are used to settle the proposal.</Trans>
+                  </li>
+                </ul>
+                <p className={classes.subtitle}>
+                  <Trans>Exceptions for Proposals</Trans>
+                </p>
+                <ul>
+                  <li>
+                    <Trans>
+                      Some proposals may not fit the requirements or the process described above.
+                      For example, small grants (between 0 and 5 ETH), emergency or retroactive
+                      funding, or urgent matters that need immediate attention.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      For these cases, there is a Vrbs Grants Committee (GC) that controls a Safe
+                      wallet with funds allocated by the DAO. The GCE consists of 5 Vrbs members who
+                      are elected by the DAO and who can approve or reject grants requests with a 3
+                      out of 5 majority.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Grants requests are submitted via a form and posted on the forum as well. The
+                      GC reviews and discusses them and may ask for clarifications or changes from
+                      the applicants. The GC votes and notifies the applicants of their decision. If
+                      approved, the GC transfers the funds from the Safe to the applicants.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      In addition, the DAO Architects have veto rights with 3 out of 5 signatures.
+                      They can veto any proposal that they consider to be malicious to Vrbs DAO, its
+                      operations or community.
+                    </Trans>
+                  </li>
                 </ul>
                 <p>
                   <Trans>
-                    There are unfortunately no algorithmic solutions for making these determinations
-                    in advance (if there were, the veto would not be required), and proposals must
-                    be considered on a case by case basis.
+                    The purpose of proposals and grants is to foster innovation, collaboration, and
+                    growth within the Vrbs DAO and its ecosystem. They should align with the vision
+                    and values of the Vrbs DAO and benefit its members and stakeholders.
                   </Trans>
                 </p>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="4" className={classes.accordionItem}>
               <Accordion.Header className={classes.accordionHeader}>
-                <Trans>Vrbs vs y00t Nouns</Trans>
+                <Trans>Vrbs vs y00t nouns</Trans>
               </Accordion.Header>
               <Accordion.Body>
                 <p>
                   <Trans>
-                    The VRBs DAO`s virtuous cycle describes the cycle by which the incentivizing of
+                    The Vrbs DAO’s virtuous cycle describes the cycle by which the incentivizing of
                     doing good leads to a greater collective good (which is compounded) through a
                     constant cycle of improvement.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                    We accomplish this by taking Nouns orginal operating principles and improving on
-                    them in a sort of nouns 2.0, which will proliferate all things VRBish, and
-                    building from a solid foundation of experienced founders and a proven model. The
-                    DAO exists for the proliferation of VRBs and for returning value back to its
-                    members.
+                    We accomplish this by taking Nouns original operating principles and elevating
+                    them in a sort of Nouns 2.0 manner, which will proliferate all things related to
+                    Vrbs, building from a solid foundation of experienced founders and a proven
+                    model. The DAO exists for the proliferation of Vrbs and a net positive force in
+                    the world.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                  The purchasing of a VRB NFT grants access to participate in the governance and rewards of the DAO. This governance is responsible for a community treasury, which is grown via a once-a-day auction model + contributions from previously backed projects.
+                    The purchasing of a Vrb NFT grants access to participate in the governance and
+                    rewards of the DAO. This governance is responsible for a community treasury,
+                    which is grown via a once-a-day auction model and contributions from previously
+                    backed projects.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                  As the treasury grows, so do the proposals for funding, made by the members of the DAO, who aspire to proliferate VRBish ideals in the next generation tools, companies, events, and projects they build.
+                    As the treasury grows, so do the proposals for funding which will be made by the
+                    members of the DAO. Aspiring to proliferate Vrb ideals in the next generation
+                    tools, companies, events, and projects they build.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                  These tools in turn help support the Ethereum/Solana/Polygon communities of builders and the broader in real life (IRL) communities around them, promoting a cycle of improvement that leads to viral growth.
+                    These tools in turn help support the Ethereum/Solana/Polygon communities of
+                    builders and the broader in real life (IRL) communities around them, promoting a
+                    cycle of improvement that leads to viral growth.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                  Injecting the spirit of VRBs into Nouns ecosystem creates a powerful identity and further strengthens the need for action in this current environment. We are operating under a model of rapid decentralization, meaning, that this DAO framework was developed by a small group of Architects who laid the foundation for the DAO. Once the foundation was developed, a larger group of critically important entrepreneurs, investors, thinkers, and artists, known as the builders (council) further developed the idiosyncratic parts of the DAO.
+                    Injecting the spirit of Vrbs into the Nouns ecosystem creates a powerful
+                    identity and further strengthens the need for action in this current
+                    environment.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                  Which brings us to today the VRBs and y00t noun communities will begin to build applications, rules, companies, games, art, and more within the framework (thought to life by the Architects, and developed on by the builders).
+                    We operate under a model of rapid decentralization, meaning that this DAO
+                    framework was developed by a small group of Vrb architects who laid the
+                    foundation for the DAO. Once the foundation was developed, a larger group of
+                    critically important entrepreneurs, investors, thinkers, and artists, known as
+                    the builders (council) further developed the idiosyncratic parts of the DAO.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                  This is rapid decentralization.
+                    Which brings us to today. The Vrbs and y00t Noun members will begin to build
+                    applications, rules, companies, games, art, and more within the framework
+                    (thought to life by the Architects, and developed on by the builders).
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>This is rapid decentralization.</Trans>
+                </p>
+                <p>
+                  <Trans>
+                    In short, as Vrbs become a cultural tour de force, their value will increase and
+                    the treasury will grow. As the treasury grows, more ideas will be funded,
+                    leading to more projects created and more visions realized. In this way, the
+                    jovial characters boasting square-shaped glasses can be the catalyst of
+                    real-world changes and good in the world.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                  In short, as VRBs become a cultural tour de force, their value will increase and the treasury will grow. As the treasury grows, more ideas will be funded, leading to more projects created and more visions realized. In this way, the jovial characters boasting square-shaped glasses can be the catalyst of real-world changes and good in the world.
+                    Both y00t Nouns and Vrbs are co-equal but serve different and distinct roles in
+                    the DAO.{' '}
+                    <span style={{ fontWeight: 'bold' }}>
+                      It is up to each individual to decide what path they take:
+                    </span>
                   </Trans>
                 </p>
-                <p>
-                  <Trans>
-                  Both y00t nouns and VRBs are co-equal but serve different and distinct roles in the DAO. It is up to each individual to decide what path they take:
-                  </Trans>
+                <p className={classes.subtitle}>
+                  <Trans>Owning a Vrb</Trans>
                 </p>
-                <p>
-                  <Trans>
-                  Owning a VRB
-                  <ul>
-                    <li>
-                      <Trans>Voting: Instant voting rights over treasury allocations from the DAO.</Trans>
-                    </li>
-                    <li>
-                      <Trans>Proposals: Instant proposal rights in the DAO, allowing one to get their idea, project or company funded by the VRBs.</Trans>
-                    </li>
-                    <li>
-                      <Trans>Multi-Chain: Each VRB will have the ability to transpose their NFT to future VRBs DAO (BTC, SOL, etc).</Trans>
-                    </li>
-                    <li>
-                      <Trans>Gamification: Each VRB will have the ability of getting rewards from the treasury via participation in the governance.</Trans>
-                    </li>
-                    <li>
-                      <Trans>Art: Each VRB is a 1/1 handcrafted piece by the marque names in the Solana and Ethereum ecosystems artists from marculino.png to Pencilx to DeGen Poet and many more.</Trans>
-                    </li>
-                  </ul>
-                  </Trans>
+                <ul>
+                  <li>
+                    <Trans>Voting: Voting rights over treasury allocations from the DAO.</Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Proposals: Proposal rights in the DAO, allowing one to get their idea, project
+                      or company funded.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Multi-Chain: Each Vrb will have the ability to transpose their NFT to future
+                      Vrbs DAOs.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Gamification: Each Vrb will have the ability to receive rewards from the
+                      treasury via participation in the governance.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Art: Each Vrb is a 1/1 pixel character developed by the super talented
+                      cross-chain and multidisciplinary artists @Pencilx and @Marculino. Future
+                      artists will also contribute their talents to drawing additional Vrbs.
+                    </Trans>
+                  </li>
+                </ul>
+                <p className={classes.subtitle}>
+                  <Trans>Owning a y00t Noun</Trans>
                 </p>
-                <p>
-                  <Trans>
-                  Owning a y00t Noun
-                  <ul>
-                    <li>
-                      <Trans>Voting and Proposal via delegation rights post y00ts season II by the DeGods.</Trans>
-                    </li>
-                    <li>
-                      <Trans>Access to VRBs community chats.</Trans>
-                    </li>
-                    <li>
-                      <Trans>Stacking Points, IRL y00t events, and access to De the discord server.</Trans>
-                    </li>
-                    <li>
-                      <Trans>Social clout and following from the main y00ts account.</Trans>
-                    </li>
-                    <li>
-                      <Trans>Participation in the #1 collection on Polygon.</Trans>
-                    </li>
-                    <li>
-                      <Trans>Brand Partnerships from the y00ts team.</Trans>
-                    </li>
-                  </ul>
-                  </Trans>
-                </p>
+                <ul>
+                  <li>
+                    <Trans>
+                      Voting and Proposal rights via delegation post y00ts season II by the DeGods.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>Access to VRBs community chats.</Trans>
+                  </li>
+                  <li>
+                    <Trans>
+                      Stacking y00t points, IRL y00t events, and access to the DeLabs Discord
+                      server.
+                    </Trans>
+                  </li>
+                  <li>
+                    <Trans>Social clout and following from the main y00ts account.</Trans>
+                  </li>
+                  <li>
+                    <Trans>Participation in the #1 collection on Polygon.</Trans>
+                  </li>
+                  <li>
+                    <Trans>Brand Partnerships from the y00ts team.</Trans>
+                  </li>
+                </ul>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="5" className={classes.accordionItem}>
               <Accordion.Header className={classes.accordionHeader}>
-                <Trans>Vrbs Art</Trans>
+                <Trans>Artists</Trans>
               </Accordion.Header>
               <Accordion.Body>
                 <p>
                   <Trans>
-                  Vrbs art is uniquely positioned at the intersection of governance and provenance. Each Vrb has be hand-crafted over the course of months by the most prolific artists in the NFT ecosystem. 
+                    The Vrbs artwork pays homage to the OG Nouns on Ethereum and their pioneering
+                    work in the formation of decentralized on-chain communities.
                   </Trans>
                 </p>
 
                 <p>
                   <Trans>
-                  The cute but savage PFPs pay homage to the OG nouns but in a unique y00ts style.
+                    With that in mind, the Vrbs artwork has a different approach around on-chain
+                    art, whereby instead of generating pixel art via randomly based Ethereum block
+                    hashes, aka programmed code, the artwork are instead true 1/1 art characters,
+                    whose development was led by two super talented blockchain-native artists
+                    @Pencilx and @Marculino.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                  Vrbs are selected randomly based Ethereum block hashes. There are no `if` statements or other rules governing Vrbs, which makes all Nouns equally rare.
+                    Art has the incredible super power of bringing people together and these
+                    characters are meant to do exactly that.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Each Vrb takes on a whimsical life of its own, distinct by itself, yet part of a
+                    broader diverse collection of characters that represent the diversity of the DAO
+                    members. Each Vrb artistically carries a certain lean towards culture and
+                    action, reflective of the DAO’s belief that cultivating a strong community can
+                    in turn have a big and small impact in the world.
                   </Trans>
                 </p>
               </Accordion.Body>
             </Accordion.Item>
             <Accordion.Item eventKey="6" className={classes.accordionItem}>
               <Accordion.Header className={classes.accordionHeader}>
-                <Trans>Vrbder's Reward</Trans>
+                <Trans>The Team</Trans>
               </Accordion.Header>
               <Accordion.Body>
                 <p>
@@ -435,68 +675,83 @@ const Documentation = (props: DocumentationProps = { backgroundColor: '#FFF' }) 
                     'Vrbs' are the group of ten builders that initiated Vrbs. Here are the Vrbs:
                   </Trans>
                 </p>
-                <ul>
-                  <li>
-                    <Link
-                      text="@cryptoseneca"
-                      url="https://twitter.com/cryptoseneca"
-                      leavesPage={true}
-                    />
-                  </li>
-                  <li>
-                    <Link text="@gremplin" url="https://twitter.com/gremplin" leavesPage={true} />
-                  </li>
-                  <li>
-                    <Link text="@punk4156" url="https://twitter.com/punk4156" leavesPage={true} />
-                  </li>
-                  <li>
-                    <Link text="@eboyarts" url="https://twitter.com/eBoyArts" leavesPage={true} />
-                  </li>
-                  <li>
-                    <Link text="@punk4464" url="https://twitter.com/punk4464" leavesPage={true} />
-                  </li>
-                  <li>
-                    <Link
-                      text="@_solimander_"
-                      url="https://twitter.com/_solimander_"
-                      leavesPage={true}
-                    />
-                  </li>
-                  <li>
-                    <Link text="@dhof" url="https://twitter.com/dhof" leavesPage={true} />
-                  </li>
-                  <li>
-                    <Link
-                      text="@devcarrot"
-                      url="https://twitter.com/carrot_init"
-                      leavesPage={true}
-                    />
-                  </li>
-                  <li>
-                    <Link text="@TimpersHD" url="https://twitter.com/TimpersHD" leavesPage={true} />
-                  </li>
-                  <li>
-                    <Link
-                      text="@lastpunk9999"
-                      url="https://twitter.com/lastpunk9999"
-                      leavesPage={true}
-                    />
-                  </li>
-                </ul>
+                <p className={classes.subtitle}>
+                  <Trans>Pre Launch Structure: </Trans>
+                </p>
                 <p>
                   <Trans>
-                    Because 100% of Vrb auction proceeds are sent to Vrbs DAO, Vrbs have chosen to
-                    compensate themselves with Vrbs. Every 10th Vrb for the first 5 years of the
-                    project (Vrb ids #0, #10, #20, #30 and so on) will be automatically sent to the
-                    Vrbder's multisig to be vested and shared among the founding members of the
-                    project.
+                    The DAO framework was developed by a small group of architects who laid the
+                    foundational operating principles and vision for the DAO. Once the foundation
+                    was developed, a larger group of critically important builders, known as the
+                    Builders, have further scaled out critical operational parts of the DAO.
                   </Trans>
                 </p>
                 <p>
                   <Trans>
-                    Vrbder distributions don't interfere with the cadence of 24 hour auctions. Vrbs
-                    are sent directly to the Vrbder's Multisig, and auctions continue on schedule
-                    with the next available Vrb ID.
+                    Architects: Developers of the vision and operational framework for the DAO.
+                    Setters of culture and a value system for the community. They are also
+                    responsible for developing the Vrbs Protocol, informing its development,
+                    governance structure, and long term viability.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Builders: The larger group of critically important entrepreneurs, developers,
+                    investors, thinkers, and artists who scaled out the operational capacity and
+                    excellence of the DAO including governance, networks, socials, and art.
+                  </Trans>
+                </p>
+                <p className={classes.subtitle}>
+                  <Trans>Post Launch Structure:</Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Post launch, the Vrbs and y00t Noun members will begin to build applications,
+                    rules, companies, games, art, and more within the framework brought to life by
+                    the architects and developed on by the builders.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Holders: After the launch of the DAO, there will be no delineation between
+                    Architects, Builders, and Holders; everyone will have the same ability and
+                    responsibility to build, vote, and participate in the growth of the DAO.
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Meaning that each holder, regardless of early contribution, will only have one
+                    vote per NFT and the right to submit proposals to the DAO.
+                  </Trans>
+                </p>
+              </Accordion.Body>
+            </Accordion.Item>
+            <Accordion.Item eventKey="7" className={classes.accordionItem}>
+              <Accordion.Header className={classes.accordionHeader}>
+                <Trans>Architects & Builder Rewards</Trans>
+              </Accordion.Header>
+              <Accordion.Body>
+                <p>
+                  <Trans>
+                    Vrb architects and builders will receive compensation in the form of Vrbs
+                    distributed on Day 0, equivalent to 10% of the total supply of Vrbs on each
+                    chain that the DAO launches on. Compensation is determined by proof of work put
+                    in (e.g. how many hours were contributed to the DAO).
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    This allows the 15+ architects and builders to experience the same level of
+                    dilution as every other holder, (which was one of the core pieces of advice
+                    received from the ETH nounders).
+                  </Trans>
+                </p>
+                <p>
+                  <Trans>
+                    Lastly, this initial distribution will help limit or practically eliminate the
+                    need to utilize the more centralized veto power of the DAO by allowing for a
+                    dispersion of votes early on, that will help steward the DAO governance in its
+                    infancy until critical mass consensus is reached.
                   </Trans>
                 </p>
               </Accordion.Body>
