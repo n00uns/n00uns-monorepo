@@ -132,9 +132,9 @@ export const StandaloneVrbWithSeed: React.FC<StandaloneVrbWithSeedProps> = (
   // const prev: { image: string; description: string } = getVrb(prevID, prevSeed);
   // console.log(prev);
 
-  if (!seed || seedIsInvalid || !vrbId || !onLoadSeed) return <Vrb imgPath="" alt="Vrb" />;
+  //if (!seed || seedIsInvalid || !vrbId || !onLoadSeed) return <Vrb imgPath="" alt="Vrb" />;
 
-  onLoadSeed(seed);
+  //onLoadSeed(seed);
 
   const onClickHandler = () => {
     dispatch(setOnDisplayAuctionVrbId(vrbId.toNumber()));
