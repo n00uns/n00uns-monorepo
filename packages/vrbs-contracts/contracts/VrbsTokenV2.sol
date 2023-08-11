@@ -175,14 +175,15 @@ uint256[] private _existingTokenIds;
         return imageURI;
     }
     
-    function formatTokenURI(string memory _imageURI) public pure returns (string memory) {
+    function formatTokenURI(string memory _imageURI, uint256 tokenId) public pure returns (string memory) {
         string memory baseURL = "data:application/json;base64,";
+         string memory tokenString = Strings.toString(tokenId);
         return string(abi.encodePacked(
             baseURL,
             Base64.encode(
                 bytes(abi.encodePacked(
-                    '{"name": "SVG NFT", ', 
-                    '"description": "An NFT based on SVG!", ', 
+                    '{"name": "Vrbs #"', tokenString ,', ', 
+                    '"description": "One Vrb, One Vote, One Action Filled Movement.", ', 
                     '"attributes": "", ', 
                     '"image": "', _imageURI, '"}'
                 )
@@ -208,7 +209,7 @@ function setTokenSvg(uint256 tokenId, string calldata svgB64) external onlyOwner
         // Check if this token has an SVG associated with it
         if (bytes(_tokenSVGB64[tokenId]).length > 0) {
             string memory imageURI = svgToImageURI(_tokenSVGB64[tokenId]);
-            return formatTokenURI(imageURI);
+            return formatTokenURI(imageURI, tokenId);
         } else {
             return string(abi.encodePacked(_tokenBaseURI, tokenId.toString(), _tokenURISuffix
             ));
