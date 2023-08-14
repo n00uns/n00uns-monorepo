@@ -7,6 +7,10 @@ import { LoadingVrb } from '../Vrb';
 import { Auction as IAuction } from '../../wrappers/vrbsAuction';
 import classes from './Auction.module.css';
 import { IVrbSeed } from '../../wrappers/vrbsToken';
+
+import { ImageData } from '@vrbs/assets';
+
+
 import FounderVrbContent from '../FounderVrbContent';
 import { useHistory } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks';
@@ -23,16 +27,20 @@ interface AuctionProps {
   auction?: IAuction;
 }
 
+const { bgcolors } = ImageData;
+
 const Auction: React.FC<AuctionProps> = props => {
   const { auction: currentAuction } = props;
+
 
   const history = useHistory();
   const dispatch = useAppDispatch();
   let stateBgColor = useAppSelector(state => state.application.stateBackgroundColor);
   const lastVrbId = useAppSelector(state => state.onDisplayAuction.lastAuctionVrbId);
 
-  const loadedVrbHandler = (seed: IVrbSeed) => {
-    dispatch(setStateBackgroundColor(seed.background === 0 ? grey : beige));
+  const loadedVrbHandler = (seed: IAuction) => {
+ 
+    dispatch(setStateBackgroundColor(bgcolors[seed.vrbId.toNumber()] === "grey" ? "grey" : "beige"));
   };
 
   const prevAuctionHandler = () => {
@@ -46,9 +54,9 @@ const Auction: React.FC<AuctionProps> = props => {
 
   const vrbContent = currentAuction && (
     <div className={classes.vrbWrapper}>
+       {loadedVrbHandler(currentAuction)}
       <StandaloneVrbWithSeed
         vrbId={currentAuction.vrbId}
-        onLoadSeed={loadedVrbHandler}
         shouldLinkToProfile={false}
       />
     </div>
