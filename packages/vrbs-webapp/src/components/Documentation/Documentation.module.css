@@ -6,6 +6,11 @@
   padding: 4rem 0 !important;
 }
 
+.headerWrapper {
+  z-index: 2;
+  position: relative;
+}
+
 .documentationBg {
   width: 100%;
   position:absolute;
