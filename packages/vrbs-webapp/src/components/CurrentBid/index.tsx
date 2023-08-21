@@ -33,20 +33,20 @@ const CurrentBid: React.FC<{ currentBid: BigNumber | BidNa; auctionEnded: boolea
           {titleContent}
         </h4>
       </Col>
-      <Col xs="auto" lg={12}>
+      <Col xs={7} lg={12}>
         <h2
           className={classes.currentBid}
         >
-          {currentBid === BID_N_A ? BID_N_A : <TruncatedAmount amount={currentBid && currentBid} />}
+          {currentBid === BID_N_A ? BID_N_A : <TruncatedAmount amount={currentBid && currentBid} />} ETH
         </h2>
       </Col>
-      <Col xs="auto" lg={12}>
+      {/* <Col xs="auto" lg={12}>
         <h3
           className={classes.currentCurrency}
         >
           ETH
         </h3>
-      </Col>
+      </Col> */}
     </Row>
   );
 };

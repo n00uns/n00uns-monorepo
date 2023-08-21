@@ -6,11 +6,8 @@ import { setStateBackgroundColor } from '../../state/slices/application';
 import { LoadingVrb } from '../Vrb';
 import { Auction as IAuction } from '../../wrappers/vrbsAuction';
 import classes from './Auction.module.css';
-import { IVrbSeed } from '../../wrappers/vrbsToken';
-
+// import { IVrbSeed } from '../../wrappers/vrbsToken';
 import { ImageData } from '@vrbs/assets';
-
-
 import FounderVrbContent from '../FounderVrbContent';
 import { useHistory } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../hooks';
@@ -22,6 +19,8 @@ import {
 import { beige, grey } from '../../utils/vrbBgColors';
 import pixel_border from '../../assets/pixel_border.svg';
 import bg from '../../assets/home/home-sec1.png';
+import useOnDisplayAuction from '../../wrappers/onDisplayAuction';
+import ProfileActivityFeed from '../../components/ProfileActivityFeed';
 
 interface AuctionProps {
   auction?: IAuction;
@@ -31,16 +30,17 @@ const { bgcolors } = ImageData;
 
 const Auction: React.FC<AuctionProps> = props => {
   const { auction: currentAuction } = props;
-
-
   const history = useHistory();
   const dispatch = useAppDispatch();
   let stateBgColor = useAppSelector(state => state.application.stateBackgroundColor);
   const lastVrbId = useAppSelector(state => state.onDisplayAuction.lastAuctionVrbId);
+  const onDisplayAuction = useOnDisplayAuction();
+  const onDisplayAuctionVrbId = onDisplayAuction?.vrbId.toNumber();
 
   const loadedVrbHandler = (seed: IAuction) => {
- 
-    dispatch(setStateBackgroundColor(bgcolors[seed.vrbId.toNumber()] === "grey" ? "grey" : "beige"));
+    // console.log('seed');
+    // console.log(seed);
+    dispatch(setStateBackgroundColor(bgcolors[seed.vrbId.toNumber()] === grey ? grey : beige));
   };
 
   const prevAuctionHandler = () => {
@@ -54,11 +54,8 @@ const Auction: React.FC<AuctionProps> = props => {
 
   const vrbContent = currentAuction && (
     <div className={classes.vrbWrapper}>
-       {loadedVrbHandler(currentAuction)}
-      <StandaloneVrbWithSeed
-        vrbId={currentAuction.vrbId}
-        shouldLinkToProfile={false}
-      />
+      {loadedVrbHandler(currentAuction)}
+      <StandaloneVrbWithSeed vrbId={currentAuction.vrbId} shouldLinkToProfile={false} />
     </div>
   );
 
@@ -104,8 +101,13 @@ const Auction: React.FC<AuctionProps> = props => {
                 : currentAuctionActivityContent)}
           </Col>
         </Row>
+        {onDisplayAuctionVrbId !== undefined && onDisplayAuctionVrbId !== lastVrbId && (
+          <Row>
+            <ProfileActivityFeed vrbId={onDisplayAuctionVrbId} />
+          </Row>
+        )}
       </Container>
-      <img src={pixel_border} className={classes.auctionBorder}alt="border" />
+      <img src={pixel_border} className={classes.auctionBorder} alt="border" />
     </div>
   );
 };

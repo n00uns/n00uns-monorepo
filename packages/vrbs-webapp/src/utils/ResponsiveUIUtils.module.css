@@ -2,6 +2,10 @@
   display: none !important;
 }
 
+.padBottom {
+  padding-bottom: 3rem;
+}
+
 @media (max-width: 1200px) {
   .desktopOnly {
     display: none;

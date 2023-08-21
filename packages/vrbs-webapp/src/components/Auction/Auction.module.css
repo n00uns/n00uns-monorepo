@@ -5,6 +5,7 @@
 
 .vrbContentCol {
   display: flex;
+  justify-content: center;
 }
 
 .auctionActivityCol {
