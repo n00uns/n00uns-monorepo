@@ -9,7 +9,7 @@ import Identicon from '../Identicon';
 import { Web3Provider } from '@ethersproject/providers';
 
 const ShortAddress: React.FC<{ address: string; avatar?: boolean; size?: number }> = props => {
-  const { address, avatar, size = 24 } = props;
+  const { address, avatar, size = 20 } = props;
   const { library: provider } = useEthers();
 
   const ens = useReverseENSLookUp(address) || resolveVrbContractAddress(address);

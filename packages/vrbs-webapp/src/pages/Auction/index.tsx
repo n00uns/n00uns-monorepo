@@ -6,7 +6,6 @@ import { push } from 'connected-react-router';
 import { vrbPath } from '../../utils/history';
 import useOnDisplayAuction from '../../wrappers/onDisplayAuction';
 import { useEffect } from 'react';
-import ProfileActivityFeed from '../../components/ProfileActivityFeed';
 import VrbIntroSection from '../../components/VrbIntroSection';
 
 interface AuctionPageProps {
@@ -51,11 +50,7 @@ const AuctionPage: React.FC<AuctionPageProps> = props => {
   return (
     <>
       <Auction auction={onDisplayAuction} />
-      {onDisplayAuctionVrbId !== undefined && onDisplayAuctionVrbId !== lastAuctionVrbId ? (
-        <ProfileActivityFeed vrbId={onDisplayAuctionVrbId} />
-      ) : (
-        <VrbIntroSection />
-      )}
+      <VrbIntroSection />
       <Documentation
         backgroundColor={
           onDisplayAuctionVrbId === undefined || onDisplayAuctionVrbId === lastAuctionVrbId

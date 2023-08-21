@@ -73,7 +73,7 @@ const ProfileActivityFeed: React.FC<ProfileActivityFeedProps> = props => {
             <Trans>This Vrb has no activity, since it was just created. Check back soon!</Trans>
           </div>
         ) : (
-          <>
+          <div className={responsiveUiUtilsClasses.padBottom}>
             <div className={responsiveUiUtilsClasses.desktopOnly}>
               <DesktopProfileActivityFeed
                 events={data}
@@ -96,7 +96,7 @@ const ProfileActivityFeed: React.FC<ProfileActivityFeedProps> = props => {
                 toggleCallback={() => setIsExpanded(!isExpanded)}
               />
             )}
-          </>
+          </div>
         )}
       </Col>
     </Section>

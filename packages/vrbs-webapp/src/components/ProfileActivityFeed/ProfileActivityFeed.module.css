@@ -9,7 +9,8 @@
 
 @media (min-width: 992px) {
   .headerWrapper {
-    padding: 1rem;
+    margin-top: -2rem;
+    padding: 0 1rem 1rem 1rem;
     display: block;
     padding-bottom: 16px;
   }
